@@ -1,0 +1,2068 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Acórdão ADI 6606 STF · Teto Constitucional e Regime Remuneratório</title>
+  <meta name="description" content="Dashboard e Guia Interativo do Acórdão da ADI 6606 e Tema 966 do STF sobre Teto Remuneratório, Simetria e Regime Transitório da EC 135/2024.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=IBM+Plex+Mono:wght@400;500;600;700&family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy: #0E2A33;
+      --navy-dark: #07171C;
+      --navy-light: #163A46;
+      --navy-hover: #1E4D5D;
+      --latao: #B98A2F;
+      --latao-2: #D4A94E;
+      --latao-dark: #8C651D;
+      --latao-subtle: rgba(185, 138, 47, 0.15);
+      --papel: #F6F4EE;
+      --papel-2: #EFEBE0;
+      --papel-3: #E4DEC9;
+      --border-papel: #DDD6C6;
+      --tinta: #1E2A2E;
+      --tinta-muted: #55686E;
+      --tinta-light: #7E9096;
+      --white: #FFFFFF;
+      --alert-red: #B3261E;
+      --alert-red-bg: #FDF2F2;
+      --success-green: #1B5E20;
+      --success-green-bg: #F1F8F2;
+      --stf-blue: #0277BD;
+      --stf-blue-bg: #E8F4FA;
+      --sidebar-width: 280px;
+      --header-height: 64px;
+      --radius-sm: 4px;
+      --radius-md: 8px;
+      --radius-lg: 12px;
+      --shadow-sm: 0 1px 3px rgba(14, 42, 51, 0.08);
+      --shadow-md: 0 4px 12px rgba(14, 42, 51, 0.10);
+      --shadow-lg: 0 8px 24px rgba(14, 42, 51, 0.12);
+      --transition: all 0.2s ease-in-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Public Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background-color: var(--papel);
+      color: var(--tinta);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* TYPOGRAPHY */
+    h1, h2, h3, h4, .font-serif {
+      font-family: 'Fraunces', Georgia, serif;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: -0.02em;
+    }
+
+    .font-mono, .mono-badge, .code-snippet, .eyebrow {
+      font-family: 'IBM Plex Mono', Menlo, Monaco, monospace;
+    }
+
+    /* LAYOUT WRAPPER */
+    .app-container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: var(--sidebar-width);
+      background-color: var(--navy);
+      color: var(--papel);
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 100;
+      border-right: 1px solid var(--navy-light);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.15);
+    }
+
+    .sidebar-header {
+      padding: 24px 20px 18px;
+      border-bottom: 1px solid rgba(185, 138, 47, 0.25);
+    }
+
+    .sidebar-eyebrow {
+      font-size: 0.70rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--latao-2);
+      margin-bottom: 4px;
+    }
+
+    .sidebar-title {
+      font-size: 1.15rem;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-subtitle {
+      font-size: 0.78rem;
+      color: rgba(246, 244, 238, 0.7);
+    }
+
+    .sidebar-nav {
+      flex: 1;
+      padding: 16px 12px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .nav-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 14px;
+      border-radius: var(--radius-md);
+      color: rgba(246, 244, 238, 0.85);
+      text-decoration: none;
+      font-size: 0.90rem;
+      font-weight: 500;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: var(--transition);
+      background: transparent;
+      width: 100%;
+      text-align: left;
+    }
+
+    .nav-item:hover {
+      background-color: var(--navy-light);
+      color: var(--white);
+      border-color: rgba(185, 138, 47, 0.2);
+    }
+
+    .nav-item.active {
+      background-color: var(--navy-light);
+      color: var(--latao-2);
+      border-color: var(--latao);
+      font-weight: 600;
+      box-shadow: inset 3px 0 0 var(--latao-2);
+    }
+
+    .nav-item-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-icon {
+      font-size: 1.05rem;
+      width: 20px;
+      text-align: center;
+    }
+
+    .nav-badge {
+      font-size: 0.70rem;
+      background-color: rgba(185, 138, 47, 0.25);
+      color: var(--latao-2);
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+
+    .sidebar-footer {
+      padding: 14px 18px;
+      border-top: 1px solid rgba(185, 138, 47, 0.2);
+      font-size: 0.75rem;
+      color: rgba(246, 244, 238, 0.6);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sidebar-footer-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 8px;
+      background: var(--navy-light);
+      color: var(--papel);
+      border: 1px solid rgba(185, 138, 47, 0.4);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 0.80rem;
+      font-weight: 500;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .sidebar-footer-btn:hover {
+      background: var(--latao);
+      color: var(--navy-dark);
+      border-color: var(--latao-2);
+    }
+
+    /* MAIN CONTENT */
+    .main-content {
+      flex: 1;
+      margin-left: var(--sidebar-width);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* TOP BAR */
+    .topbar {
+      height: var(--header-height);
+      background-color: var(--white);
+      border-bottom: 1px solid var(--border-papel);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 32px;
+      position: sticky;
+      top: 0;
+      z-index: 90;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .topbar-left {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .topbar-badge-stf {
+      background-color: var(--navy);
+      color: var(--latao-2);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .topbar-title {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .topbar-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background-color: var(--papel-2);
+      color: var(--navy);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-sm);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .btn-action:hover {
+      background-color: var(--navy);
+      color: var(--papel);
+      border-color: var(--navy);
+    }
+
+    .btn-action-primary {
+      background-color: var(--latao);
+      color: var(--navy-dark);
+      border-color: var(--latao-dark);
+    }
+
+    .btn-action-primary:hover {
+      background-color: var(--latao-2);
+      color: var(--navy-dark);
+    }
+
+    /* CONTENT BODY CONTAINER */
+    .content-body {
+      flex: 1;
+      padding: 32px;
+      max-width: 1240px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    /* SECTIONS */
+    .view-section {
+      display: none;
+      animation: fadeIn 0.25s ease-in-out;
+    }
+
+    .view-section.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* HERO CARD (OVERVIEW) */
+    .hero-banner {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: var(--papel);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 28px;
+      border: 1px solid rgba(185, 138, 47, 0.35);
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-banner::before {
+      content: "ADI 6606";
+      position: absolute;
+      right: -20px;
+      bottom: -35px;
+      font-family: 'Fraunces', serif;
+      font-size: 8.5rem;
+      font-weight: 700;
+      color: rgba(185, 138, 47, 0.05);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .hero-eyebrow {
+      color: var(--latao-2);
+      font-size: 0.80rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-size: 2.1rem;
+      color: var(--white);
+      line-height: 1.2;
+      margin-bottom: 12px;
+      max-width: 900px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: rgba(246, 244, 238, 0.85);
+      max-width: 850px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .hero-meta-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      border-top: 1px solid rgba(185, 138, 47, 0.25);
+      padding-top: 20px;
+    }
+
+    .hero-meta-item {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .hero-meta-label {
+      font-size: 0.70rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--latao-2);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .hero-meta-value {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--papel);
+    }
+
+    /* STATS STRIP */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-left: 4px solid var(--navy);
+    }
+
+    .stat-card.gold {
+      border-left-color: var(--latao);
+    }
+
+    .stat-card.red {
+      border-left-color: var(--alert-red);
+    }
+
+    .stat-card.green {
+      border-left-color: var(--success-green);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--tinta-muted);
+      font-weight: 600;
+    }
+
+    .stat-value {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: 'Fraunces', serif;
+      line-height: 1.1;
+    }
+
+    .stat-desc {
+      font-size: 0.78rem;
+      color: var(--tinta-muted);
+    }
+
+    /* CARD COMPONENT */
+    .card {
+      background-color: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-papel);
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: var(--radius-sm);
+      text-transform: uppercase;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .badge-navy {
+      background: var(--navy);
+      color: var(--latao-2);
+    }
+
+    .badge-gold {
+      background: var(--latao-subtle);
+      color: var(--latao-dark);
+      border: 1px solid var(--latao);
+    }
+
+    .badge-red {
+      background: var(--alert-red-bg);
+      color: var(--alert-red);
+      border: 1px solid rgba(179, 38, 30, 0.3);
+    }
+
+    .badge-green {
+      background: var(--success-green-bg);
+      color: var(--success-green);
+      border: 1px solid rgba(27, 94, 32, 0.3);
+    }
+
+    /* THESIS BOX */
+    .thesis-box {
+      background-color: var(--papel-2);
+      border: 1px solid var(--latao);
+      border-left: 6px solid var(--latao);
+      border-radius: var(--radius-md);
+      padding: 22px 26px;
+      margin-bottom: 28px;
+      position: relative;
+    }
+
+    .thesis-title {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--latao-dark);
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .thesis-content {
+      font-size: 1.05rem;
+      color: var(--navy-dark);
+      line-height: 1.65;
+      font-weight: 500;
+    }
+
+    /* DECISION TREE */
+    .tree-step-card {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 20px;
+      margin-bottom: 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tree-step-header {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tree-branches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 12px;
+    }
+
+    .tree-branch-box {
+      background-color: var(--papel);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .tree-condition {
+      font-size: 0.85rem;
+      color: var(--tinta);
+      font-weight: 500;
+    }
+
+    .tree-result-row {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      border-top: 1px dashed var(--border-papel);
+      padding-top: 6px;
+    }
+
+    .tree-result-name {
+      font-size: 0.90rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .tree-result-badge {
+      font-size: 0.72rem;
+      font-family: 'IBM Plex Mono', monospace;
+      color: var(--latao-dark);
+      font-weight: 600;
+    }
+
+    /* CHAPTER STRUCTURE TABLE */
+    .table-responsive {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-papel);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+
+    thead th {
+      background-color: var(--navy);
+      color: var(--papel);
+      padding: 12px 16px;
+      font-weight: 600;
+      font-family: 'Public Sans', sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    tbody td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-papel);
+      background-color: var(--white);
+    }
+
+    tbody tr:nth-child(even) td {
+      background-color: var(--papel);
+    }
+
+    tbody tr:hover td {
+      background-color: var(--papel-2);
+    }
+
+    /* CHAPTER VIEW */
+    .chapter-hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+      color: var(--papel);
+      border-radius: var(--radius-lg);
+      padding: 36px 40px;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 24px;
+      border: 1px solid rgba(185, 138, 47, 0.35);
+      box-shadow: var(--shadow-md);
+    }
+
+    .chapter-hero::before {
+      content: attr(data-roman);
+      position: absolute;
+      right: 24px;
+      top: -20px;
+      font-family: 'Fraunces', serif;
+      font-size: 9.5rem;
+      font-weight: 700;
+      color: rgba(185, 138, 47, 0.08);
+      pointer-events: none;
+      line-height: 1;
+    }
+
+    .ch-nav-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .ch-pill-btn {
+      padding: 6px 14px;
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: 20px;
+      color: var(--navy);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .ch-pill-btn:hover {
+      background: var(--papel-2);
+      border-color: var(--latao);
+    }
+
+    .ch-pill-btn.active {
+      background: var(--navy);
+      color: var(--latao-2);
+      border-color: var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .chapter-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 28px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border-papel);
+    }
+
+    .ch-core-box {
+      background-color: rgba(185, 138, 47, 0.12);
+      border: 1px solid rgba(185, 138, 47, 0.4);
+      border-left: 4px solid var(--latao);
+      border-radius: var(--radius-sm);
+      padding: 16px 20px;
+      margin-top: 18px;
+      font-size: 0.98rem;
+      color: var(--papel);
+      line-height: 1.6;
+    }
+
+    /* FRAMEWORKS IN CHAPTER */
+    .framework-card {
+      background-color: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 22px 24px;
+      margin-bottom: 20px;
+      border-left: 4px solid var(--navy);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .framework-title {
+      font-size: 1.15rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .framework-desc {
+      font-size: 0.92rem;
+      color: var(--tinta);
+      margin-bottom: 14px;
+      line-height: 1.55;
+    }
+
+    .fw-meta-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+      background: var(--papel);
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+
+    .fw-meta-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .fw-meta-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--latao-dark);
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    .fw-meta-val {
+      color: var(--tinta);
+    }
+
+    /* CONCEPTS GRID */
+    .concepts-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .concept-card {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .concept-term {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .concept-desc {
+      font-size: 0.85rem;
+      color: var(--tinta-muted);
+      line-height: 1.5;
+    }
+
+    /* ANTI PATTERNS */
+    .antipattern-card {
+      background: var(--alert-red-bg);
+      border: 1px solid rgba(179, 38, 30, 0.25);
+      border-left: 4px solid var(--alert-red);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 14px;
+    }
+
+    .antipattern-name {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--alert-red);
+      margin-bottom: 4px;
+    }
+
+    .antipattern-wrong {
+      font-size: 0.88rem;
+      color: var(--tinta);
+      margin-bottom: 6px;
+    }
+
+    .antipattern-reason {
+      font-size: 0.82rem;
+      color: var(--tinta-muted);
+      font-style: italic;
+    }
+
+    /* WORKED EXAMPLE BOX */
+    .worked-example-box {
+      background-color: var(--papel-2);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* GLOSSARY VIEW */
+    .glossary-search-bar {
+      margin-bottom: 24px;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 12px 18px;
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      font-size: 0.95rem;
+      background-color: var(--white);
+      color: var(--tinta);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .search-input:focus {
+      border-color: var(--latao);
+      box-shadow: 0 0 0 3px rgba(185, 138, 47, 0.2);
+    }
+
+    .glossary-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .glossary-card {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 18px 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 10px;
+      transition: var(--transition);
+    }
+
+    .glossary-card:hover {
+      border-color: var(--latao);
+      box-shadow: var(--shadow-md);
+    }
+
+    .glossary-term {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .glossary-def {
+      font-size: 0.88rem;
+      color: var(--tinta);
+      line-height: 1.55;
+    }
+
+    .glossary-ch-tag {
+      font-size: 0.70rem;
+      font-family: 'IBM Plex Mono', monospace;
+      background-color: var(--papel-2);
+      color: var(--latao-dark);
+      padding: 2px 8px;
+      border-radius: 4px;
+      align-self: flex-start;
+      border: 1px solid var(--border-papel);
+    }
+
+    /* CHEATSHEET VIEW */
+    .rules-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 28px;
+    }
+
+    .rules-table th {
+      background-color: var(--navy);
+      color: var(--papel);
+      padding: 12px 16px;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+
+    .rules-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border-papel);
+      font-size: 0.88rem;
+      background: var(--white);
+    }
+
+    .rules-table tr:nth-child(even) td {
+      background: var(--papel);
+    }
+
+    .rules-table tr:hover td {
+      background: var(--papel-2);
+    }
+
+    .matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 28px;
+    }
+
+    .matrix-col {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .matrix-col.allowed {
+      border-top: 4px solid var(--success-green);
+    }
+
+    .matrix-col.forbidden {
+      border-top: 4px solid var(--alert-red);
+    }
+
+    .matrix-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .matrix-title.allowed { color: var(--success-green); }
+    .matrix-title.forbidden { color: var(--alert-red); }
+
+    .matrix-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.86rem;
+    }
+
+    .matrix-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      padding: 6px 8px;
+      border-radius: var(--radius-sm);
+      background: var(--papel);
+    }
+
+    .matrix-list.allowed li::before {
+      content: "✓";
+      color: var(--success-green);
+      font-weight: 700;
+    }
+
+    .matrix-list.forbidden li::before {
+      content: "✗";
+      color: var(--alert-red);
+      font-weight: 700;
+    }
+
+    .threshold-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .threshold-card {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+    }
+
+    .threshold-val {
+      font-size: 1.4rem;
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      color: var(--latao-dark);
+      margin-bottom: 2px;
+    }
+
+    .threshold-lbl {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .threshold-desc {
+      font-size: 0.78rem;
+      color: var(--tinta-muted);
+    }
+
+    .smell-card {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-left: 4px solid var(--latao-dark);
+      border-radius: var(--radius-md);
+      padding: 16px 20px;
+      margin-bottom: 12px;
+    }
+
+    .smell-title {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+
+    .smell-desc {
+      font-size: 0.86rem;
+      color: var(--tinta);
+      margin-bottom: 4px;
+    }
+
+    .smell-violation {
+      font-size: 0.78rem;
+      color: var(--alert-red);
+      font-weight: 600;
+      font-family: 'IBM Plex Mono', monospace;
+    }
+
+    /* PATTERNS VIEW */
+    .pattern-card {
+      background: var(--white);
+      border: 1px solid var(--border-papel);
+      border-radius: var(--radius-lg);
+      padding: 26px 28px;
+      margin-bottom: 24px;
+      box-shadow: var(--shadow-sm);
+      border-left: 5px solid var(--navy);
+    }
+
+    .pattern-title {
+      font-size: 1.25rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .pattern-section-block {
+      margin-bottom: 14px;
+    }
+
+    .pattern-label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--latao-dark);
+      font-family: 'IBM Plex Mono', monospace;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .pattern-text {
+      font-size: 0.90rem;
+      color: var(--tinta);
+      line-height: 1.55;
+    }
+
+    pre.code-block {
+      background: var(--navy-dark);
+      color: #D6DEEB;
+      padding: 16px 18px;
+      border-radius: var(--radius-sm);
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.82rem;
+      overflow-x: auto;
+      margin: 10px 0;
+      line-height: 1.45;
+    }
+
+    /* FOOTER */
+    .page-footer {
+      margin-top: 40px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border-papel);
+      text-align: center;
+      font-size: 0.80rem;
+      color: var(--tinta-muted);
+    }
+
+    /* KEYBOARD HINT */
+    .keyboard-hint {
+      position: fixed;
+      bottom: 18px;
+      right: 24px;
+      background: var(--navy-dark);
+      color: var(--papel);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-family: 'IBM Plex Mono', monospace;
+      border: 1px solid rgba(185, 138, 47, 0.4);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: var(--shadow-md);
+      z-index: 80;
+      pointer-events: none;
+    }
+
+    .kbd-key {
+      background: var(--navy-light);
+      color: var(--latao-2);
+      padding: 1px 6px;
+      border-radius: 3px;
+      border: 1px solid var(--latao);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .app-container {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        width: 100%;
+        position: static;
+        box-shadow: none;
+      }
+
+      .sidebar-nav {
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        padding: 8px 12px;
+      }
+
+      .nav-item {
+        width: auto;
+      }
+
+      .main-content {
+        margin-left: 0;
+      }
+
+      .content-body {
+        padding: 20px 16px;
+      }
+
+      .hero-banner {
+        padding: 24px 20px;
+      }
+
+      .hero-title {
+        font-size: 1.5rem;
+      }
+
+      .chapter-hero {
+        padding: 24px 20px;
+      }
+
+      .matrix-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .keyboard-hint {
+        display: none;
+      }
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background: #FFF !important;
+        color: #000 !important;
+        font-size: 10pt;
+      }
+
+      .sidebar, .topbar, .ch-nav-pills, .chapter-controls, .glossary-search-bar, .keyboard-hint, .btn-action {
+        display: none !important;
+      }
+
+      .main-content {
+        margin-left: 0 !important;
+      }
+
+      .content-body {
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .view-section {
+        display: block !important;
+        page-break-after: always;
+      }
+
+      .card, .hero-banner, .chapter-hero, .framework-card, .pattern-card {
+        border: 1px solid #CCC !important;
+        box-shadow: none !important;
+        background: #FFF !important;
+        color: #000 !important;
+      }
+
+      .hero-banner, .chapter-hero {
+        background: #F4F4F4 !important;
+        color: #000 !important;
+      }
+
+      .hero-title, .chapter-hero h2 {
+        color: #000 !important;
+      }
+
+      th {
+        position: static !important;
+        background: #E0E0E0 !important;
+        color: #000 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="app-container">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-eyebrow font-mono">STF · Plenário</div>
+      <h1 class="sidebar-title font-serif">ADI 6606</h1>
+      <div class="sidebar-subtitle">Teto Constitucional & Simetria</div>
+    </div>
+
+    <nav class="sidebar-nav">
+      <button class="nav-item active" id="nav-overview" onclick="go('overview')">
+        <span class="nav-item-left"><span class="nav-icon">🏛️</span> Visão Geral</span>
+        <span class="nav-badge">Tema 966</span>
+      </button>
+
+      <button class="nav-item" id="nav-chapters" onclick="go('chapters')">
+        <span class="nav-item-left"><span class="nav-icon">📖</span> Capítulos</span>
+        <span class="nav-badge">7 Cap</span>
+      </button>
+
+      <button class="nav-item" id="nav-glossary" onclick="go('glossary')">
+        <span class="nav-item-left"><span class="nav-icon">📚</span> Glossário</span>
+        <span class="nav-badge" id="sidebar-gloss-count">51</span>
+      </button>
+
+      <button class="nav-item" id="nav-cheatsheet" onclick="go('cheatsheet')">
+        <span class="nav-item-left"><span class="nav-icon">⚡</span> Cheatsheet</span>
+        <span class="nav-badge">11 Regras</span>
+      </button>
+
+      <button class="nav-item" id="nav-patterns" onclick="go('patterns')">
+        <span class="nav-item-left"><span class="nav-icon">📐</span> Padrões</span>
+        <span class="nav-badge">6 Padrões</span>
+      </button>
+    </nav>
+
+    <div class="sidebar-footer">
+      <div>Relator: <strong>Min. Gilmar Mendes</strong></div>
+      <div>Vigência: <strong>Abril/2026</strong></div>
+      <button class="sidebar-footer-btn" onclick="window.print()">
+        <span>🖨️</span> Imprimir / Salvar PDF
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN WRAPPER -->
+  <main class="main-content">
+    <!-- TOP BAR -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="topbar-badge-stf font-mono">STF · ADI 6606</div>
+        <div class="topbar-title font-serif">Regime Remuneratório da Justiça & Teto Constitucional</div>
+      </div>
+      <div class="topbar-right">
+        <button class="btn-action" onclick="window.print()">
+          <span>🖨️</span> Imprimir PDF
+        </button>
+        <a href="https://github.com/chlima123/adi-6606-teto-remuneratorio" target="_blank" class="btn-action btn-action-primary">
+          <span>🐙</span> GitHub
+        </a>
+      </div>
+    </header>
+
+    <!-- CONTENT BODY -->
+    <div class="content-body">
+
+      <!-- SECTION 1: VISÃO GERAL -->
+      <section id="sec-overview" class="view-section active">
+        <div class="hero-banner">
+          <div class="hero-eyebrow font-mono" id="ov-eyebrow">TRIBUNAL PLENO · SUPREMO TRIBUNAL FEDERAL</div>
+          <h2 class="hero-title" id="ov-title">Acórdão ADI 6606 STF: Teto Constitucional e Regime Remuneratório</h2>
+          <p class="hero-subtitle" id="ov-subtitle">Guia Interativo e Doutrinário do Julgamento Plenário · Tema 966 da Repercussão Geral</p>
+          
+          <div class="hero-meta-strip">
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Relator</span>
+              <span class="hero-meta-value" id="ov-relator">Min. Gilmar Mendes</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Julgamento Conjunto</span>
+              <span class="hero-meta-value">ADI 6606, 6601, 6604, RE 968.646, RE 1.059.466, Rcl 88.319</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Marco Temporal</span>
+              <span class="hero-meta-value">Mês-base Abril/2026 (Folha de Maio/2026)</span>
+            </div>
+            <div class="hero-meta-item">
+              <span class="hero-meta-label">Teto STF</span>
+              <span class="hero-meta-value font-mono">R$ 46.366,19</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Capítulos Analíticos</span>
+            <span class="stat-value">7</span>
+            <span class="stat-desc">Doutrina e teses vinculantes</span>
+          </div>
+          <div class="stat-card gold">
+            <span class="stat-label">Teto Geral Nacional</span>
+            <span class="stat-value">R$ 46.366</span>
+            <span class="stat-desc">Subsídio de Ministro do STF</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Subteto Estadual</span>
+            <span class="stat-value">90,25%</span>
+            <span class="stat-desc">Desembargadores e PGJs</span>
+          </div>
+          <div class="stat-card gold">
+            <span class="stat-label">Trava Indenizatória</span>
+            <span class="stat-value">35,00%</span>
+            <span class="stat-desc">Limite máximo do Item 5.2</span>
+          </div>
+        </div>
+
+        <!-- THESIS -->
+        <div class="thesis-box">
+          <div class="thesis-title">🏛️ Tese Vinculante Central (Tema 966)</div>
+          <div class="thesis-content" id="ov-thesis">
+            Carregando tese vinculante...
+          </div>
+        </div>
+
+        <!-- DECISION TREE -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🌳 Árvore de Decisão: Teste Trifásico de Constitucionalidade Remuneratória</h3>
+            <span class="card-badge badge-gold font-mono">Fluxo Algorítmico</span>
+          </div>
+          <div id="overview-tree-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- CHAPTERS STRUCTURE -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">📑 Estrutura e Mapeamento dos Capítulos do Acórdão</h3>
+            <span class="card-badge badge-navy font-mono">7 Capítulos</span>
+          </div>
+          <div class="table-responsive">
+            <table>
+              <thead>
+                <tr>
+                  <th style="width: 60px;">Cap.</th>
+                  <th>Título e Matéria</th>
+                  <th>Framework Central & Foco Temático</th>
+                  <th style="width: 100px; text-align: center;">Ação</th>
+                </tr>
+              </thead>
+              <tbody id="overview-chapters-table">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 2: CAPÍTULOS -->
+      <section id="sec-chapters" class="view-section">
+        <!-- SUBNAV PILLS -->
+        <div class="ch-nav-pills" id="chapter-nav-pills">
+          <!-- Rendered by JS -->
+        </div>
+
+        <!-- CHAPTER HERO -->
+        <div class="chapter-hero" id="ch-hero" data-roman="I">
+          <div class="hero-eyebrow font-mono" id="ch-eyebrow">CAPÍTULO I · ADI 6606</div>
+          <h2 class="hero-title" id="ch-title">Título do Capítulo</h2>
+          <div class="ch-core-box" id="ch-core-idea">
+            Ideia central do capítulo...
+          </div>
+        </div>
+
+        <!-- FRAMEWORKS INTRODUCED -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">⚖️ Frameworks e Modelos Jurídicos Introduzidos</h3>
+            <span class="card-badge badge-gold font-mono" id="ch-fw-count">Frameworks</span>
+          </div>
+          <div id="ch-frameworks-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- KEY CONCEPTS -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🔑 Conceitos-Chave da Decisão</h3>
+            <span class="card-badge badge-navy font-mono">Glossário Específico</span>
+          </div>
+          <div class="concepts-grid" id="ch-concepts-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- MENTAL MODELS & ANTI-PATTERNS (2 COLUMNS) -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; margin-bottom: 24px;">
+          <div class="card" style="margin-bottom: 0;">
+            <div class="card-header">
+              <h3 class="card-title" style="font-size: 1.15rem;">🧠 Modelos Mentais</h3>
+              <span class="card-badge badge-navy font-mono">Raciocínio</span>
+            </div>
+            <div id="ch-mental-models-container" style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+
+          <div class="card" style="margin-bottom: 0;">
+            <div class="card-header">
+              <h3 class="card-title" style="font-size: 1.15rem; color: var(--alert-red);">🚫 Anti-padrões e Vedações</h3>
+              <span class="card-badge badge-red font-mono">Vedações</span>
+            </div>
+            <div id="ch-antipatterns-container">
+              <!-- Rendered by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- WORKED EXAMPLE -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">🔍 Caso Concreto / Simulação de Aplicação Prática</h3>
+            <span class="card-badge badge-gold font-mono">Aplicação</span>
+          </div>
+          <div class="worked-example-box" id="ch-worked-example">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- KEY TAKEAWAYS -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">📌 Pontos de Retenção (Key Takeaways)</h3>
+            <span class="card-badge badge-green font-mono">Checklist</span>
+          </div>
+          <ul id="ch-takeaways-container" style="list-style: none; display: flex; flex-direction: column; gap: 8px;">
+            <!-- Rendered by JS -->
+          </ul>
+        </div>
+
+        <!-- CHAPTER NAVIGATION CONTROLS -->
+        <div class="chapter-controls">
+          <button class="btn-action" id="btn-prev-chapter" onclick="navPrev()">
+            <span>←</span> Capítulo Anterior
+          </button>
+          <span class="font-mono" id="ch-pagination-label" style="font-size: 0.85rem; font-weight: 600; color: var(--navy);">
+            Capítulo 1 de 7
+          </span>
+          <button class="btn-action btn-action-primary" id="btn-next-chapter" onclick="navNext()">
+            Próximo Capítulo <span>→</span>
+          </button>
+        </div>
+      </section>
+
+      <!-- SECTION 3: GLOSSÁRIO -->
+      <section id="sec-glossary" class="view-section">
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">📚 Glossário Jurídico da ADI 6606 & Tema 966</h3>
+            <span class="card-badge badge-gold font-mono" id="gloss-count-badge">51 Termos</span>
+          </div>
+          <p style="font-size: 0.90rem; color: var(--tinta-muted); margin-bottom: 18px;">
+            Pesquisa em tempo real de termos constitucionais, institutos remuneratórios e marcos da decisão do STF.
+          </p>
+
+          <div class="glossary-search-bar">
+            <input type="text" id="gloss-input" class="search-input" placeholder="🔍 Buscar por termo (ex.: VTM, teto, cumulação, honorários, simetria, penduricalhos)..." oninput="handleGlossarySearch(this.value)">
+            <button class="btn-action" onclick="document.getElementById('gloss-input').value=''; handleGlossarySearch('');">
+              Limpar
+            </button>
+          </div>
+
+          <div class="glossary-grid" id="glossary-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: CHEATSHEET -->
+      <section id="sec-cheatsheet" class="view-section">
+        <!-- RULES TABLE -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">⚡ Regras de Decisão Rápidas (If / Then)</h3>
+            <span class="card-badge badge-gold font-mono">11 Regras</span>
+          </div>
+          <div class="table-responsive">
+            <table class="rules-table tbl-rules">
+              <thead>
+                <tr>
+                  <th style="width: 220px;">Cenário / Situação</th>
+                  <th>Regra Decisória Vinculante</th>
+                  <th style="width: 140px;">Fundamento</th>
+                </tr>
+              </thead>
+              <tbody id="cheatsheet-rules-table">
+                <!-- Rendered by JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- MATRIX ALLOWED VS FORBIDDEN -->
+        <div class="matrix-grid">
+          <div class="matrix-col allowed">
+            <h4 class="matrix-title allowed">
+              <span>✓</span> Parcelas Autorizadas no Regime Transitório
+            </h4>
+            <ul class="matrix-list allowed" id="matrix-allowed-list">
+              <!-- Rendered by JS -->
+            </ul>
+          </div>
+
+          <div class="matrix-col forbidden">
+            <h4 class="matrix-title forbidden">
+              <span>✗</span> Verbas Extintas / Declaradas Inconstitucionais
+            </h4>
+            <ul class="matrix-list forbidden" id="matrix-forbidden-list">
+              <!-- Rendered by JS -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- THRESHOLDS -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title">📊 Thresholds, Subtetos e Parâmetros Numéricos</h3>
+            <span class="card-badge badge-navy font-mono">Limites Rígidos</span>
+          </div>
+          <div class="threshold-grid" id="cheatsheet-thresholds-grid">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+
+        <!-- TELLS & SMELLS -->
+        <div class="card">
+          <div class="card-header">
+            <h3 class="card-title" style="color: var(--latao-dark);">🚩 Tells & Smells: Sinais de Alerta de Burla ao Teto</h3>
+            <span class="card-badge badge-gold font-mono">Auditoria</span>
+          </div>
+          <div id="cheatsheet-smells-container">
+            <!-- Rendered by JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: PADRÕES DE AUDITORIA -->
+      <section id="sec-patterns" class="view-section">
+        <div style="margin-bottom: 20px;">
+          <h2 class="font-serif" style="font-size: 1.6rem; color: var(--navy); margin-bottom: 6px;">
+            📐 Padrões de Decisão, Auditoria e Algoritmos de Cálculo
+          </h2>
+          <p style="font-size: 0.90rem; color: var(--tinta-muted);">
+            Protocolos formais, checklists de conformidade e código executável de fechamento de folha de pagamento.
+          </p>
+        </div>
+
+        <div id="patterns-container">
+          <!-- Rendered by JS -->
+        </div>
+      </section>
+
+      <!-- PAGE FOOTER -->
+      <footer class="page-footer font-mono">
+        Guia Interativo ADI 6606 STF · Supremo Tribunal Federal · Tema 966 da Repercussão Geral<br>
+        Publicado no GitHub Pages · Desenvolvido sob o design "Pauta Ministerial"
+      </footer>
+    </div>
+  </main>
+</div>
+
+<!-- KEYBOARD NAVIGATION HINT -->
+<div class="keyboard-hint">
+  Navegar capítulos: <span class="kbd-key">←</span> <span class="kbd-key">→</span>
+</div>
+
+<script>
+  /* EMBEDDED DATA STRUCTURES */
+  const OVERVIEW_DATA = {"title": "Acórdão ADI 6606 STF: Teto Constitucional e Regime Remuneratório", "subtitle": "Guia Interativo e Doutrinário do Julgamento Plenário · Tema 966 da Repercussão Geral", "court": "Supremo Tribunal Federal", "relator": "Min. Gilmar Mendes", "organ": "Tribunal Pleno", "date_trial": "25/02/2026", "date_efficacy": "Mês-base Abril/2026 (Folha de Maio/2026)", "joined_cases": "ADI 6606 (MG), ADI 6601 (PR), ADI 6604 (PB), RE 968.646, RE 1.059.466 e Rcl 88.319", "theme": "Tema 966 da Repercussão Geral", "pages": "~201 páginas", "chapters_count": 7, "terms_count": 51, "rules_count": 11, "patterns_count": 6, "ceiling_value": "R$ 46.366,19", "state_ceiling": "R$ 41.845,49 (90,25%)", "vtm_limit": "35,00%", "indemnity_limit": "35,00%", "thesis": "O Plenário do STF, no julgamento conjunto da ADI 6606 e ações correlatas (Tema 966), reafirmou a higidez do teto constitucional nacional de R$ 46.366,19, a simetria absoluta entre Magistratura e Ministério Público, o escalonamento estadual de 90,25%, extirpou penduricalhos e verbas autoconcedidas, e estabeleceu um regime transitório estrito sob a EC 135/2024 baseado na VTM (até 35%) e trava global de 35% para indenizações comprovadas, sob governança estrutural do CNJ/CNMP e transparência ativa nominal.", "decision_tree": [{"step": "1. Natureza Ontológica da Parcela (CF, art. 39, § 4º vs. art. 37, § 11)", "branches": [{"condition": "Retribuição de atividade funcional regular ou extraordinária típica do cargo", "result": "Subsídio em Parcela Única", "badge": "Vedado Qualquer Acréscimo / Teto do art. 37, XI"}, {"condition": "Ressarcimento de despesa extraordinária ou prejuízo comprovado em serviço", "result": "Indenização Genuína", "badge": "Avança para Análise de Reserva Legal (Passo 2)"}]}, {"step": "2. Fonte Normativa e Reserva de Competência (EC 135/2024, art. 37, § 11)", "branches": [{"condition": "Criada por resolução administrativa interna ou lei estadual/local autônoma", "result": "Inconstitucionalidade Formal e Material", "badge": "Item 7 da Tese · Expurgo e Nulidade Imediata"}, {"condition": "Prevista em Lei Ordinária Nacional do Congresso ou rol fechado do Item 5.2", "result": "Parcela Autorizada Provisoriamente", "badge": "Avança para Limitação Financeira (Passo 3)"}]}, {"step": "3. Subtetos e Travas Financeiras do Regime Transitório (Itens 5.1, 5.2 e 6)", "branches": [{"condition": "Valorização por Tempo de Atividade Jurídica (VTM de Antiguidade)", "result": "5% a cada 5 anos comprovados", "badge": "Trava Máxima em 35% do Subsídio"}, {"condition": "Soma de todas as indenizações mensais (Diárias + Cumulação + Ajuda + Férias)", "result": "Somatório Mensal de Indenizações", "badge": "Trava Global em 35% do Subsídio (Glosa)"}, {"condition": "13º, 1/3 de Férias, Auxílio-Saúde comprovado, Abono Permanência, Eleitoral", "result": "Exceções Constitucionais Autônomas", "badge": "Fora dos Subtetos de 35% (Item 6)"}]}], "chapters_summary": [{"num": 1, "roman": "I", "title": "A Evolução Constitucional do Subsídio e o Colapso do Modelo de Parcela Única", "focus": "Parcela única, EC 19/98, EC 41/03, EC 135/24 e reserva de lei nacional."}, {"num": 2, "roman": "II", "title": "Simetria Constitucional Magistratura-MP e Escalonamento dos Subsídios Estaduais", "focus": "Paridade estrita (art. 129, §4º), subteto de 90,25% (art. 93, V), ADIs 6601/6604/6606."}, {"num": 3, "roman": "III", "title": "O Regime Transitório da EC 135/2024 e o Rol Taxativo de Parcelas Admitidas", "focus": "VTM de 35%, trava global de 35% nas indenizações, exceções constitucionais do Item 6."}, {"num": 4, "roman": "IV", "title": "Cumulação de Jurisdição e Ofícios: Critérios de Legitimidade e Vedações Estritas", "focus": "Alteridade de órgão, limite de 1/3, proibição de gratificação em turmas/pleno/comissões."}, {"num": 5, "roman": "V", "title": "Declaração de Inconstitucionalidade, Expurgo de Penduricalhos e Trava de Retroativos", "focus": "Catálogo de 12 verbas extintas, vedação à conversão de licenças, bloqueio de pagamentos balão."}, {"num": 6, "roman": "VI", "title": "A Advocacia Pública, Honorários de Sucumbência e o Regime dos Fundos Públicos", "focus": "Teto do STF sobre honorários, teto pleno na advocacia municipal (Rcl 88.319), fundos públicos."}, {"num": 7, "roman": "VII", "title": "Governança Estrutural, Transparência Ativa, Resolução CNJ/CNMP e Modulação Temporal", "focus": "Processo estrutural, Resolução Conjunta CNJ/CNMP, transparência nominal, vigência abril/2026."}]};
+  const CHAPTERS_DATA = [{"num": 1, "roman": "I", "id": "ch01", "title": "A Evolução Constitucional do Subsídio e o Colapso do Modelo de Parcela Única", "core_idea": "A EC 19/1998 e a EC 41/2003 instituíram o subsídio em parcela única e o teto remuneratório nacional para coibir abusos remuneratórios e garantir transparência republicana, mas a ausência de lei ordinária nacional integradora e a fragmentação corporativa ensejaram uma corrida por penduricalhos indenizatórios autoconcedidos, colapsando o modelo originário e exigindo a intervenção corretiva e estrutural do STF no julgamento conjunto da ADI 6606 sob as balizas da EC 135/2024.", "frameworks": [{"name": "Paradigma da Parcela Única Constitucional (CF, art. 39, § 4º)", "desc": "O modelo constitucional de subsídio impõe que a remuneração de membros de Poder e detentores de mandato seja fixada exclusivamente em parcela única, sendo taxativamente vedado o acréscimo de qualquer gratificação, adicional, abono, prêmio, verba de representação ou outra espécie remuneratória pelo exercício das funções regulares do cargo.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Dicotomia Ontológica: Parcela Remuneratória vs. Parcela Indenizatória Genuína", "desc": "A remuneração retribui trabalho funcional regular ou extraordinário; a indenização tem finalidade estritamente ressarcitória de dano, despesa comprovada realizada no interesse do serviço público ou compensação por direito patrimonial legitimamente sacrificado.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Princípio da Reserva de Lei Ordinária Nacional (EC 135/2024, art. 37, § 11)", "desc": "Apenas lei nacional editada pelo Congresso Nacional tem aptidão constitucional para instituir, autorizar e delimitar as parcelas indenizatórias imunes ao teto remuneratório dos Ministros do STF.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}], "concepts": [{"term": "Subsídio", "desc": "Retribuição fixada exclusivamente em parcela única devida a membros de Poder e agentes políticos (art. 39, § 4º da CF)."}, {"term": "Teto Constitucional", "desc": "Limite financeiro remuneratório máximo da federação, equivalente ao subsídio mensal dos Ministros do STF (art. 37, XI da CF, R$ 46.366,19)."}, {"term": "Penduricalhos", "desc": "Expressão doutrinária e jurisprudencial para designar parcelas pecuniárias adjetivas criadas administrativamente ou por leis locais com natureza remuneratória mas rotuladas de indenizatórias."}, {"term": "Emenda Constitucional nº 19/1998", "desc": "Marco da Reforma Administrativa que substituiu o sistema tradicional de vencimento + vantagens pelo subsídio em parcela única."}, {"term": "Emenda Constitucional nº 41/2003", "desc": "Fixou o teto único do STF e abrangeu proventos de inatividade e vantagens pessoais de qualquer natureza."}, {"term": "Emenda Constitucional nº 135/2024", "desc": "Alterou o art. 37, § 11 da CF, exigindo expressamente lei ordinária nacional de competência do Congresso Nacional para excluir parcelas indenizatórias do teto."}, {"term": "Regime Transitório do Tema 966", "desc": "Regramento emergencial vinculante estabelecido pelo STF para harmonizar a segurança jurídica até a edição da lei nacional da EC 135/2024."}], "mental_models": [{"name": "O Subsídio como Teto e Piso Simultâneos", "desc": "O subsídio fixado para os Ministros do STF atua como parâmetro unificador e limite intransponível de toda a federação brasileira, impedindo a fragmentação federativa do sistema de justiça."}, {"name": "A Indenização Fantasma", "desc": "Toda verba de valor fixo, periódico e automático paga sem exigência de prestação de contas de gasto suportado pelo agente é remuneração disfarçada e sujeita-se ao teto do art. 37, XI."}, {"name": "A Ilusão da Convalidação pela EC 135/2024", "desc": "O art. 3º da EC 135/2024 não anistiou nem convalidou diplomas locais ou atos infralegais imorais; acolheu provisoriamente apenas parcelas genuinamente indenizatórias compatíveis com a moralidade e razoabilidade públicas."}], "anti_patterns": [{"name": "Autonomia Regulamentar Abusiva", "wrong": "Tribunais de Justiça ou órgãos de cúpula do Ministério Público criarem ou majorarem indenizações e auxílios por mera resolução ou decisão administrativa", "reason": "Viola frontalmente a reserva de lei formal e a competência nacional da União (art. 37, § 11)."}, {"name": "Monetização de Folgas e Licenças Ordinárias", "wrong": "Instituir descansos ficcionais (ex.: 1 folga por 3 dias trabalhados) com a única finalidade de convertê-los em dinheiro todos os meses", "reason": "Burlar o teto constitucional por meio da simulação de passivo indenizatório inexistente."}, {"name": "Invocação da Irredutibilidade de Vencimentos sobre Vantagens Ilícitas", "wrong": "Alegar direito adquirido à manutenção de penduricalhos inconstitucionais", "reason": "Não há direito adquirido a regime jurídico remuneratório contrário à Constituição (Súmula Vinculante 37 e jurisprudência pacífica do STF)."}], "worked_example": "*Caso Concreto (ADI 6606 / Contexto Fático)*:\nUm Tribunal de Justiça Estadual e uma Procuradoria-Geral de Justiça aprovaram ato normativo instituindo a \"Licença Compensatória por Acervo\", concedendo a cada magistrado e promotor 1 dia de folga a cada 3 dias de trabalho regular, com faculdade de imediata conversão em pecúnia na folha mensal, sem exigência de cumulação real de varas ou órgãos.\n*Aplicação do Raciocínio Decisório pelo STF*:\n1. **Passo 1 (Natureza Ontológica)**: A atividade jurisdicional ou ministerial ordinária já é integralmente retribuída pelo subsídio (CF, art. 39, § 4º).\n2. **Passo 2 (Falso Acervo)**: O volume de trabalho comum da vara não constitui fato gerador extraordinário que justifique compensação financeira fora do teto.\n3. **Passo 3 (Reserva Legal)**: A verba foi criada sem previsão em lei ordinária nacional (CF, art. 37, § 11).\n4. **Resultado**: O STF declarou a inconstitucionalidade da rubrica no Item 7 da Tese do Tema 966, determinando a cessação imediata de qualquer pagamento dessa natureza.", "takeaways": ["O subsídio em parcela única proíbe o acréscimo de adicionais e gratificações pelas atribuições normais do cargo.", "Somente parcelas com causa indenizatória real e comprovada podem ser excluídas do teto constitucional.", "A EC 135/2024 reservou privativamente ao Congresso Nacional a edição de lei ordinária nacional reguladora das indenizatórias.", "Resoluções administrativas e leis estaduais que instituíram penduricalhos abusivos são manifestamente inconstitucionais.", "O STF estabeleceu um regime transitório estrito com limites e subtetos rígidos para restaurar a higidez fiscal do sistema de justiça."], "connects": [{"target_num": 2, "target_title": "Simetria Constitucional Magistratura-MP e Escalonamento dos Subsídios Estaduais"}, {"target_num": 3, "target_title": "O Regime Transitório da EC 135/2024 e o Rol Taxativo de Parcelas Admitidas"}, {"target_num": 5, "target_title": "Declaração de Inconstitucionalidade, Expurgo de Penduricalhos e Trava de Retroativos"}]}, {"num": 2, "roman": "II", "id": "ch02", "title": "Simetria Constitucional Magistratura-MP e Escalonamento dos Subsídios Estaduais (Tema 966)", "core_idea": "O STF reafirmou a paridade e simetria constitucional plena entre os regimes remuneratórios da Magistratura e do Ministério Público (art. 129, § 4º c/c art. 93, V da CF/88), julgou constitucionais as leis estaduais que vinculam o subsídio de Desembargadores e Procuradores de Justiça a percentuais do subsídio dos Ministros do STF e do PGR (ADI 6601/PR, ADI 6604/PB, ADI 6606/MG) e fixou a tese vinculante do Tema 966.", "frameworks": [{"name": "Princípio da Simetria Constitucional Absoluta Magistratura-MP (CF, art. 129, § 4º e art. 93, V)", "desc": "Com a redação dada pela EC 45/2004 (Reforma do Judiciário), o estatuto constitucional da Magistratura aplica-se, no que couber, ao Ministério Público, assegurando paridade e equivalência de direitos funcionais, vantagens e limites remuneratórios.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Doutrina do Escalonamento Federativo Válido (art. 93, V vs. art. 37, XIII da CF)", "desc": "O art. 93, V da CF autoriza expressamente o escalonamento dos subsídios das carreiras da Magistratura e do MP com base no subsídio do STF/PGR (fixando o teto estadual em 90,25%), constituindo exceção constitucionalmente qualificada à vedação genérica de vinculação remuneratória do art. 37, XIII.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}], "concepts": [{"term": "Tema 966 da Repercussão Geral", "desc": "Julgamento conjunto que consolidou a simetria de regimes remuneratórios entre Magistratura e MP e reafirmou o teto salarial do STF de R$ 46.366,19."}, {"term": "ADI 6601 (Paraná)", "desc": "Ação Direta julgada improcedente para declarar válida a lei estadual paranaense que vinculou o subsídio de Desembargadores, Conselheiros do TCE e Procuradores de Justiça a percentual do STF/PGR."}, {"term": "ADI 6604 (Paraíba)", "desc": "Ação Direta julgada improcedente para declarar válida a norma paraibana de vinculação remuneratória proporcional aos ministros do STF."}, {"term": "ADI 6606 (Minas Gerais)", "desc": "Ação Direta julgada parcialmente procedente para reconhecer a higidez da vinculação ao subsídio do STF/PGR, desde que extirpadas parcelas abusivas e respeitado o Tema 966."}, {"term": "RE 968.646 (Rel. Min. Alexandre de Moraes)", "desc": "Recurso Extraordinário desprovido, mantendo a isonomia entre MP e Magistratura no tocante ao regime de diárias."}, {"term": "RE 1.059.466 (Rel. Min. Alexandre de Moraes)", "desc": "Recurso Extraordinário desprovido, assegurando a extensão simétrica de licença-prêmio conforme as balizas do regime constitucional."}, {"term": "Subteto Estadual de 90,25%", "desc": "Proporção máxima que o subsídio de Desembargador de Tribunal de Justiça e Procurador de Justiça pode atingir em relação ao subsídio de Ministro do STF (art. 37, XI e art. 93, V)."}], "mental_models": [{"name": "Vasos Comunicantes Constitucionais", "desc": "Magistratura e Ministério Público integram a mesma estrutura axiológica de garantias da jurisdição e do Estado de Direito; o que beneficia ou restringe uma carreira incide necessariamente sobre a outra."}, {"name": "A Unidade Nacional do Poder Judiciário e do MP", "desc": "Embora existam ramos estaduais e federais, o Judiciário e o MP são instituições de envergadura nacional, cujos subsídios derivam de uma matriz hierárquica e proporcional uniforme ancorada no STF."}], "anti_patterns": [{"name": "Quebra Unilateral de Isonomia", "wrong": "Leis estaduais concederem vantagens pecuniárias exclusivas para o MP que não existam na LOMAN, ou vice-versa, sem lei federal nacional", "reason": "Fere a simetria obrigatória do art. 129, § 4º da CF."}, {"name": "Interpretação Descontextualizada do art. 37, XIII", "wrong": "Argumentar que a vinculação proporcional de subsídios estaduais ao STF violaria a autonomia financeira dos Estados", "reason": "O art. 93, V é norma de especialização que prevalece sobre o art. 37, XIII no âmbito das carreiras jurídicas de cúpula."}], "worked_example": "*Caso Concreto (Julgamento do RE 968.646)*:\nA União interpôs Recurso Extraordinário contra acórdão de TRF que reconheceu a membros do Ministério Público da União o direito ao pagamento de diárias pelo mesmo valor e critério deferido aos magistrados federais, com esteio no art. 129, § 4º da CF.\n*Aplicação do Raciocínio Decisório pelo STF*:\n1. **Verificação do Texto Constitucional**: O art. 129, § 4º da CF estende expressamente o art. 93, V ao Ministério Público.\n2. **Isonomia Material**: As despesas de deslocamento de juízes e promotores em serviço decorrem da mesma necessidade funcional de atuação externa.\n3. **Decisão**: O STF negou provimento ao RE da União, fixando que a simetria assegura idêntico tratamento indenizatório e remuneratório entre ambas as carreiras.", "takeaways": ["A simetria entre Magistratura e Ministério Público é preceito constitucional cogente (art. 129, § 4º da CF).", "Leis estaduais que vinculam o subsídio de desembargadores e procuradores a percentual do STF/PGR são constitucionais.", "O Tema 966 vincula toda a administração pública e o Poder Judiciário nacional.", "Direitos e vedações de diárias, licenças e gratificações devem observar idêntica régua para juízes e promotores.", "Fica expressamente vedada qualquer distinção arbitrária entre os regimes jurídicos remuneratórios de ambas as instituições."], "connects": [{"target_num": 1, "target_title": "A Evolução Constitucional do Subsídio e o Colapso do Modelo de Parcela Única"}, {"target_num": 3, "target_title": "O Regime Transitório da EC 135/2024 e o Rol Taxativo de Parcelas Admitidas"}, {"target_num": 6, "target_title": "A Advocacia Pública, Honorários de Sucumbência e o Regime dos Fundos Públicos"}]}, {"num": 3, "roman": "III", "id": "ch03", "title": "O Regime Transitório da EC 135/2024 e o Rol Taxativo de Parcelas Admitidas", "core_idea": "Enquanto não for promulgada pelo Congresso Nacional a lei ordinária nacional prevista no art. 37, § 11 da CF (EC 135/2024), vigora o regime transitório fixado no Tema 966 do STF, que admite exclusivamente a Parcela de Valorização por Antiguidade (VTM de até 35%) e um conjunto fechado de verbas indenizatórias mensais rigorosamente limitadas à somatória máxima de 35% do respectivo subsídio.", "frameworks": [{"name": "Parcela de Valorização por Tempo na Carreira (VTM / Quinquênio) - Item 5.1", "desc": "- *Fundamento*: LC 35/1979 (LOMAN), art. 65, VIII; LC 75/1993 (LOMPU), art. 224.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Subteto Global das Verbas Indenizatórias Mensais e Auxílios - Itens 5.2 e 5.3", "desc": "- *Regra da Trava Global*: A somatória de TODAS as verbas indenizatórias mensais e auxílios do Item 5.2 JAMAIS poderá exceder 35% (trinta e cinco por cento) do respectivo subsídio.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["*Regra da Trava Global*: A somatória de TODAS as verbas indenizatórias mensais e auxílios do Item 5.2 JAMAIS poderá exceder 35% (trinta e cinco por cento) do respectivo subsídio.", "*Rol Taxativo do Item 5.2*:", "**Diárias**: Nos termos da LC 75/1993, art. 227, II, limitadas aos parâmetros do STF/PGR;", "**Ajuda de Custo**: Exclusivamente em caso de remoção, promoção ou nomeação que importe em efetiva alteração de domicílio legal (LC 75/93, art. 227, I, \"a\" c/c LC 35/79, art. 65, I), limitada a no máximo 1 subsídio;", "**Pró-labore por Magistério**: Atividade docente em escolas da magistratura/MP ou instituições autorizadas (LC 75/93, art. 227, VI c/c art. 65, IX);", "**Gratificação de Difícil Provimento**: Exercício em comarca inóspita ou de difícil fixação (Lei 8.625/93, art. 50, IX c/c LC 35/79, art. 65, X);", "**Indenização de Férias Não Gozadas**: Estritamente limitada ao máximo de 30 (trinta) dias (LC 75/93, art. 220, § 3º), vedada conversão sistemática de períodos normais;", "**Gratificação por Exercício Cumulativo de Jurisdição/Ofício**: Nos estritos limites das Leis 13.093/2015, 13.094/2015, 13.095/2015, 13.024/2014 e 14.726/2023, limitada a 1/3 do subsídio;", "**Retroativos Aprovados**: Eventuais valores retroativos reconhecidos condicionados à auditoria do Item 5.4."]}, {"name": "Exceções Constitucionais Externas aos Subtetos (Item 6 da Tese)", "desc": "- Ficam fora dos limites de 35% por expressa determinação constitucional ou legal autônoma:\n    1. **13º Salário (Gratificação Natalina)**: CF, art. 7º, VIII c/c art. 39, § 3º;\n    2. **Terço Constitucional de Férias**: CF, art. 7º, XVII;\n    3. **Auxílio-Saúde Ressarcitório**: De caráter estritamente indenizatório, exigindo comprovação documental mensal do gasto médico/odontológico suportado pelo beneficiário (LC 35/79, art. 65, I; LC 75/93, art. 227; Lei 8.625/93, art. 50, II);\n    4. **Abono de Permanência Previdenciário**: CF, art. 40, § 19;\n    5. **Gratificação Eleitoral Mensal**: CF, art. 121, § 2º c/c Lei nº 8.350/1991.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["Ficam fora dos limites de 35% por expressa determinação constitucional ou legal autônoma:", "**13º Salário (Gratificação Natalina)**: CF, art. 7º, VIII c/c art. 39, § 3º;", "**Terço Constitucional de Férias**: CF, art. 7º, XVII;", "**Auxílio-Saúde Ressarcitório**: De caráter estritamente indenizatório, exigindo comprovação documental mensal do gasto médico/odontológico suportado pelo beneficiário (LC 35/79, art. 65, I; LC 75/93, art. 227; Lei 8.625/93, art. 50, II);", "**Abono de Permanência Previdenciário**: CF, art. 40, § 19;", "**Gratificação Eleitoral Mensal**: CF, art. 121, § 2º c/c Lei nº 8.350/1991."]}], "concepts": [{"term": "VTM (Valorização por Tempo de Magistratura/MP)", "desc": "Adicional de antiguidade restabelecido com base na LOMAN e na LC 75/93, limitado a 35%."}, {"term": "Trava dos 35% Indenizatórios", "desc": "Limite financeiro intransponível sobre o pacote de indenizações mensais (item 5.2)."}, {"term": "Régua do Teto Global (35% + 35%)", "desc": "O contracheque máximo legítimo de um magistrado ou promotor em exercício acumulado e com carreira completa pode alcançar o subsídio + 35% de VTM + 35% de verbas indenizatórias (cerca de R$ 70.000 a R$ 78.000), contra os supersalários de R$ 90.000 a R$ 150.000 anteriormente praticados."}, {"term": "Auxílio-Saúde Ressarcitório", "desc": "Não pode ser pago em cota fixa sem nota fiscal ou boleto de plano de saúde comprovado."}, {"term": "Resolução Conjunta CNJ/CNMP", "desc": "Instrumento que padronizará valores e regras do pacote do item 5.2."}], "mental_models": [{"name": "O Efeito Garrote dos 35%", "desc": "Não importa quantos títulos indenizatórios legítimos o membro acumule no mês (diárias + cumulação + ajuda de custo); a soma financeira jamais ultrapassa 35% do subsídio."}], "anti_patterns": [{"name": "Superação do Subteto de 35%", "wrong": "Autorizar soma de diárias, cumulação de vara e difícil provimento totalizando 45% do subsídio", "reason": "Nulidade absoluta da folha por violação direta ao Item 5.2 da Tese do Tema 966."}, {"name": "Auxílio-Saúde em Verba Pré-fixada", "wrong": "Pagar percentual fixo de saúde a todos os membros sem apresentação de comprovante de despesa médica", "reason": "Transforma ressarcimento em remuneração camuflada, ferindo o Item 6 da Tese."}, {"name": "VTM sem Prova de Atividade Jurídica", "wrong": "Contar tempo ficto ou administrativo genérico para concessão de quinquênio da VTM", "reason": "Exige estrito exercício em atividade jurídica devidamente demonstrada."}], "worked_example": "*Auditoria de Contracheque de Magistrado de 1º Grau (Simulação Prática)*:\n- Subsídio básico: R$ 40.000,00.\n- VTM (5 quinquênios = 25 anos de carreira): 25% = R$ 10.000,00.\n- Cumulação de Juizado Especial (1/3 do subsídio): R$ 13.333,33.\n- Diárias por substituição em comarca vizinha: R$ 3.000,00.\n- Ajuda de custo para transporte local: R$ 2.000,00.\n- Auxílio-saúde (recibo de plano de saúde apresentado): R$ 1.800,00.\n\n*Aplicação das Travas da ADI 6606*:\n1. **Verificação da VTM (Item 5.1)**: R$ 10.000,00 está dentro do teto de 35% (máx R$ 14.000,00) -> **Aprovado**.\n2. **Cálculo das Indenizatórias do Item 5.2**:\n   - Cumulação de Jurisdição: R$ 13.333,33\n   - Diárias: R$ 3.000,00\n   - Ajuda de custo de transporte local (não autorizada no rol): **Glosa / R$ 0,00**\n   - Soma das parcelas do Item 5.2: R$ 13.333,33 + R$ 3.000,00 = R$ 16.333,33.\n   - Limite de 35% sobre R$ 40.000,00 = R$ 14.000,00.\n   - Aplicação da Trava: R$ 16.333,33 reduzido para **R$ 14.000,00**.\n3. **Exceção Constitucional (Item 6)**:\n   - Auxílio-saúde comprovado: R$ 1.800,00 -> **Aprovado fora dos limites de 35%**.\n4. **Total Bruto Final**: R$ 40.000,00 (subsídio) + R$ 10.000,00 (VTM) + R$ 14.000,00 (indenizatórias travadas) + R$ 1.800,00 (saúde) = **R$ 65.800,00**.", "takeaways": ["A VTM é limitada a 5% por quinquênio até o teto estrito de 35% para ativos e inativos.", "A soma de todas as verbas indenizatórias do Item 5.2 é limitada a 35% do respectivo subsídio.", "Não são permitidas outras verbas indenizatórias fora das sete hipóteses fechadas do Item 5.2.", "Auxílio-saúde só é válido mediante comprovação mensal de despesa efetiva com saúde.", "Décimo terceiro, terço de férias, abono de permanência e gratificação eleitoral ficam fora dos 35%.", "Qualquer pagamento que ultrapasse esses limites é ilegal e sujeita os ordenadores de despesa a sanções."], "connects": [{"target_num": 1, "target_title": "A Evolução Constitucional do Subsídio e o Colapso do Modelo de Parcela Única"}, {"target_num": 4, "target_title": "Cumulação de Jurisdição e Ofícios: Critérios de Legitimidade e Vedações Estritas"}, {"target_num": 5, "target_title": "Declaração de Inconstitucionalidade, Expurgo de Penduricalhos e Trava de Retroativos"}, {"target_num": 7, "target_title": "Governança Estrutural, Transparência Ativa, Resolução CNJ/CNMP e Modulação Temporal"}]}, {"num": 4, "roman": "IV", "id": "ch04", "title": "Cumulação de Jurisdição e Ofícios: Critérios de Legitimidade e Vedações Estritas", "core_idea": "A Gratificação por Exercício Cumulativo de Jurisdição ou Ofício Ministerial é legalmente legítima apenas na hipótese de atuação simultânea em órgãos judiciais ou promotorias distintos (critério da alteridade de órgão), sendo absolutamente vedada sua concessão pelo desempenho de atividades colegiadas ordinárias, administrativas ou inerentes ao cargo (turmas, seções, plenário, conselhos e comissões).", "frameworks": [{"name": "Critério da Alteridade Real de Órgão Jurisdicional / Ministerial (Itens 5.5 e 5.6 da Tese)", "desc": "A gratificação por acúmulo exige que o membro responda simultaneamente por dois ou mais órgãos jurisdicionais ou ministeriais autônomos (ex.: titular da 1ª Vara Cível respondendo também pela 2ª Vara Cível, Juizado Especial ou Turma Recursal; titular da Promotoria de Família respondendo pela Promotoria da Infância).", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Proibição da Gratificação por Dever Ordinário Inerente (Item 5.5 in fine)", "desc": "É expressamente proibida a concessão de gratificação por cumulação quando as funções exercidas forem inerentes ao próprio cargo do magistrado ou promotor.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["*Hipóteses Vedadas*:", "Atuação em Turmas, Seções e Plenário de Tribunais;", "Participação em Comissões (concursos, regimento, informática);", "Atuação no Conselho Superior da Magistratura ou Conselho Superior do MP;", "Atuação no Órgão Especial do Tribunal ou Colégio de Procuradores."]}, {"name": "Alinhamento Estrito às Leis Federais de Regência", "desc": "A cumulação no âmbito estadual e federal sujeita-se estritamente aos limites das Leis 13.093/2015 (Justiça Federal), 13.094/2015 (Justiça do DF), 13.095/2015 (MPU), 13.024/2014 (Justiça do Trabalho) e 14.726/2023 (Justiça Militar), com teto individual de 1/3 (33,33%) do subsídio e inserção dentro da trava global de 35% do Item 5.2.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}], "concepts": [{"term": "Exercício Cumulativo de Jurisdição", "desc": "Atuação do magistrado em mais de um órgão judiciário concomitante."}, {"term": "Exercício Cumulativo de Ofícios", "desc": "Atuação do membro do MP em mais de uma promotoria ou procuradoria de justiça."}, {"term": "Órgão Jurisdicional Distinto", "desc": "Unidade judiciária autônoma com competência territorial ou material própria."}, {"term": "Atribuição Inerente", "desc": "Encargo funcional que decorre da própria investidura no cargo (ex.: desembargador julgar nas turmas e no plenário)."}, {"term": "Leis Federais 13.093/15 e 13.095/15", "desc": "Paradigmas normativos federais que definem a cumulação e estabelecem o limite de 1/3 do subsídio."}, {"term": "Licença Compensatória de Folgas (Revogada)", "desc": "Antigo mecanismo de 1 folga por 3 dias trabalhados que foi julgado inconstitucional."}], "mental_models": [{"name": "Trabalho em Dobro Exige Órgão em Dobro", "desc": "Não há cumulação por julgar mais processos dentro da mesma vara; cumulação pressupõe assumir o comando de outro órgão judiciário vago ou afastado."}, {"name": "O Colegiado é Função Típica do Tribunal", "desc": "Desembargadores e Procuradores de Justiça são remunerados pelo subsídio integral justamente para atuar nas turmas, no pleno e nas comissões institucionais; instituir adicional por isso constitui bis in idem."}], "anti_patterns": [{"name": "Gratificação de Pleno/Turma para Desembargador", "wrong": "Conceder adicional de cumulação a magistrado de segundo grau por comparecer a sessões de julgamento do tribunal", "reason": "Violação expressa ao Item 5.5 da Tese do Tema 966."}, {"name": "Cumulação com Acervo Processual", "wrong": "Pagar gratificação de cumulação de vara e concomitantemente pagar \"indenização por acervo\" ao mesmo magistrado", "reason": "Dupla remuneração ilegal e extrapolação dos limites da ADI 6606."}, {"name": "Folga Compensatória em Regime 1 por 3", "wrong": "Trocar o limite financeiro da lei federal por dias de folga monetizáveis", "reason": "Declarado inconstitucional no Item 7 da Tese."}], "worked_example": "*Caso Concreto*:\nO Tribunal de Justiça de determinado Estado instituiu por resolução interna o pagamento de \"Gratificação de Atuação Colegiada Extraordinária\" equivalente a 20% do subsídio para todos os Desembargadores que compõem o Órgão Especial e as Comissões de Concurso da Magistratura.\n*Aplicação das Regras do Tema 966*:\n1. **Exame da Atribuição**: A participação no Órgão Especial e em Comissões Administrativas é dever inerente à função de Desembargador.\n2. **Incidência do Item 5.5**: O STF consignou expressamente: *\"É vedada a concessão dessa gratificação quando as funções a serem exercidas forem inerentes ao cargo do magistrado, como por exemplo, atuação em Turmas, Seções e Plenário; participação em Comissões; atuação no Conselho Superior da Magistratura ou no Órgão Especial\"*.\n3. **Decisão / Providência**: Cancelamento imediato da resolução e estorno de quaisquer valores lançados em folha a partir de abril/2026.", "takeaways": ["A cumulação de jurisdição/ofício exige atuação simultânea em varas ou órgãos distintos.", "É proibido pagar gratificação de cumulação por atuar em Turmas, Seções, Pleno, Órgão Especial ou Comissões.", "As regras de cumulação da magistratura aplicam-se com idêntico rigor aos membros do Ministério Público (Item 5.6).", "O valor da gratificação de cumulação integra a somatória do subteto de 35% das verbas indenizatórias do Item 5.2.", "Fica banido qualquer sistema substitutivo de concessão de folgas de 1 dia a cada 3 trabalhados para fins de indenização."], "connects": [{"target_num": 3, "target_title": "O Regime Transitório da EC 135/2024 e o Rol Taxativo de Parcelas Admitidas"}, {"target_num": 5, "target_title": "Declaração de Inconstitucionalidade, Expurgo de Penduricalhos e Trava de Retroativos"}, {"target_num": 7, "target_title": "Governança Estrutural, Transparência Ativa, Resolução CNJ/CNMP e Modulação Temporal"}]}, {"num": 5, "roman": "V", "id": "ch05", "title": "Declaração de Inconstitucionalidade, Expurgo de Penduricalhos e Trava de Retroativos", "core_idea": "O STF expurgou do ordenamento jurídico todas as parcelas indenizatórias e auxílios fora do rol taxativo da decisão (Item 7 da Tese), proibiu terminantemente a conversão em pecúnia de licenças e folgas (Item 8) e decretou a suspensão imediata de todos os pagamentos retroativos (\"balão\") reconhecidos por decisão judicial sem trânsito em julgado ou administrativa anteriores a fevereiro de 2026, condicionando sua liberação a auditoria pelo CNJ/CNMP e referendo do Plenário do STF (Itens 5.4 e 11).", "frameworks": [{"name": "Catálogo Geral de Inconstitucionalidade e Expurgo de Verbas (Item 7 da Tese)", "desc": "- O STF declarou a inconstitucionalidade e determinou a CESSAÇÃO IMEDIATA de todos os pagamentos de:\n    1. *Auxílio-combustível*;\n    2. *Licença compensatória por acúmulo de acervo / Indenização por acervo*;\n    3. *Gratificação por exercício de localidade / comarca sem amparo na LOMAN/LONMP*;\n    4. *Auxílio-moradia* (fora das estritas hipóteses constitucionais comprovadas);\n    5. *Auxílio-alimentação extraordinário ou natalino* (admitido apenas o regular nos limites do CNJ);\n    6. *Licença compensatória por funções administrativas e processuais relevantes*;\n    7. *Licenças compensatórias de 1 dia de folga por 3 dias trabalhados*;\n    8. *Assistência pré-escolar desvinculada*;\n    9. *Licença remuneratória para curso no exterior com diárias atípicas*;\n    10. *Gratificação por encargo de curso ou concurso em desacordo*;\n    11. *Indenização por serviços de telecomunicação / internet*;\n    12. *Auxílio-natalidade e auxílio-creche* concedidos fora das normas gerais.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["O STF declarou a inconstitucionalidade e determinou a CESSAÇÃO IMEDIATA de todos os pagamentos de:", "*Auxílio-combustível*;", "*Licença compensatória por acúmulo de acervo / Indenização por acervo*;", "*Gratificação por exercício de localidade / comarca sem amparo na LOMAN/LONMP*;", "*Auxílio-moradia* (fora das estritas hipóteses constitucionais comprovadas);", "*Auxílio-alimentação extraordinário ou natalino* (admitido apenas o regular nos limites do CNJ);", "*Licença compensatória por funções administrativas e processuais relevantes*;", "*Licenças compensatórias de 1 dia de folga por 3 dias trabalhados*;", "*Assistência pré-escolar desvinculada*;", "*Licença remuneratória para curso no exterior com diárias atípicas*;", "*Gratificação por encargo de curso ou concurso em desacordo*;", "*Indenização por serviços de telecomunicação / internet*;", "*Auxílio-natalidade e auxílio-creche* concedidos fora das normas gerais."]}, {"name": "Vedação Absoluta à Monetização de Folgas e Licenças (Item 8 da Tese)", "desc": "- É expressamente proibida a conversão em dinheiro (pecúnia) de:", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["É expressamente proibida a conversão em dinheiro (pecúnia) de:", "Licença-prêmio por assiduidade;", "Licença compensatória por exercício de plantão judiciário ou plantão de audiência de custódia;", "Qualquer outra folga, licença ou auxílio cujo pagamento em dinheiro não esteja expressamente autorizado na Tese do Tema 966."]}, {"name": "Protocolo de Bloqueio e Auditoria dos Pagamentos Retroativos (\"Pagamento Balão\" - Item 5.4 e 11)", "desc": "- *Regra de Suspensão Imediata*: Todos os pagamentos de valores retroativos (passivos históricos, diferenças salariais, correções monetárias, URV, PAE, ATS pretérito) reconhecidos por decisão administrativa ou judicial NÃO transitada em julgado anteriores a fevereiro de 2026 estão SUSPENSOS.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["*Regra de Suspensão Imediata*: Todos os pagamentos de valores retroativos (passivos históricos, diferenças salariais, correções monetárias, URV, PAE, ATS pretérito) reconhecidos por decisão administrativa ou judicial NÃO transitada em julgado anteriores a fevereiro de 2026 estão SUSPENSOS.", "*Fluxo Obrigatório de Desbloqueio*:", "Realização de auditoria contábil detalhada pelas corregedorias e órgãos de controle;", "Fixação de critérios objetivos em Resolução Conjunta do CNJ e CNMP;", "Autorização dos Conselhos Nacionais;", "**Referendo obrigatório e prévio pelo Plenário do Supremo Tribunal Federal**."]}], "concepts": [{"term": "Pagamentos Balão", "desc": "Injeções atípicas de centenas de milhares de reais no contracheque mensal de magistrados e promotores sob a rubrica de passivos retroativos acumulados."}, {"term": "Trânsito em Julgado", "desc": "Decisão judicial definitiva e irrecorrível. Apenas decisões transitadas em julgado escapam da suspensão prévia do Item 5.4, sujeitando-se todavia ao regime geral de precatórios."}, {"term": "Passivos Administrativos", "desc": "Créditos reconhecidos unilateralmente pelas mesas diretoras dos tribunais e procuradorias sem prévia dotação orçamentária federal."}, {"term": "Monetização Fraudulenta", "desc": "Prática de acumular plantões ou licenças com o propósito deliberado de exigir indenização em dinheiro em vez do gozo do descanso."}, {"term": "Efeito Repristinatório Vedado", "desc": "Impossibilidade de restabelecer vantagens já expurgadas mediante novas roupagens normativas locais."}], "mental_models": [{"name": "O Freio de Arrumação Fiscal", "desc": "A suspensão de retroativos estanca a sangria dos orçamentos estaduais e submete as folhas de pagamento ao escrutínio público antes que o dinheiro saia dos cofres."}, {"name": "Descanso se Goza, Não se Vende", "desc": "Licença e plantão servem à recuperação física e mental do agente público; vendê-los mensalmente desvirtua o regime de trabalho e viola a moralidade pública."}, {"name": "A Folha de Pagamento Não é Fundo Privado", "desc": "Não se pode utilizar disponibilidades orçamentárias de final de exercício para \"desovar\" saldos em favor dos próprios membros."}], "anti_patterns": [{"name": "Pagamento Balão Furtivo", "wrong": "Tribunal de Justiça quitar retroativo milionário de auxílio-moradia ou licença-prêmio alegando existência de sobra orçamentária", "reason": "Violação frontal ao Item 5.4 e cometimento de falta funcional grave e ato de improbidade administrativa."}, {"name": "Criação de Verbas sob Novo Nome", "wrong": "Renomear o auxílio-combustível ou licença por acervo para \"indenização de mobilidade jurisdicional\"", "reason": "Nulidade material pela incidência direta do Item 7 e do princípio da reserva de lei nacional (art. 37, § 11)."}, {"name": "Conversão de Plantão em Dinheiro", "wrong": "Pagar magistrado em dinheiro por ter atuado em plantão de fim de semana", "reason": "O plantão confere direito a folga compensatória para descanso, sendo expressamente vedada sua indenização pecuniária (Item 8)."}], "worked_example": "*Caso Prático de Auditoria*:\nEm dezembro de 2025, um Tribunal de Justiça editou ato administrativo reconhecendo uma dívida retroativa de R$ 380.000,00 a cada desembargador a título de correção monetária de gratificação de acervo acumulada entre 2018 e 2024, programando o pagamento em 4 parcelas mensais de R$ 95.000,00 a partir de março de 2026.\n*Incidência do Julgamento da ADI 6606*:\n1. **Passo 1**: O crédito decorre de ato administrativo anterior a fevereiro de 2026 e não possui sentença transitada em julgado.\n2. **Passo 2**: Incide a ordem de suspensão automática do Item 5.4 e Item 11 da Tese do Tema 966.\n3. **Passo 3**: O pagamento das parcelas de março, abril e seguintes está sumariamente bloqueado.\n4. **Passo 4**: O Tribunal deve submeter a memória de cálculo à auditoria do CNJ, aguardar a Resolução Conjunta e obter o referendo do Plenário do STF antes de qualquer desembolso.", "takeaways": ["Todas as verbas do catálogo do Item 7 (combustível, acervo 1x3, natalino, moradia atípica, etc.) estão extintas e inconstitucionais.", "É proibido converter licença-prêmio e plantões em pecúnia.", "Pagamentos retroativos administrativos ou de decisões judiciais sem trânsito em julgado estão compulsoriamente suspensos.", "O desbloqueio de retroativos exige auditoria do CNJ/CNMP e referendo do Plenário do STF.", "As vedações aplicam-se igualmente aos Tribunais de Contas, Defensorias Públicas e Advocacia Pública (Item 11)."], "connects": [{"target_num": 1, "target_title": "A Evolução Constitucional do Subsídio e o Colapso do Modelo de Parcela Única"}, {"target_num": 3, "target_title": "O Regime Transitório da EC 135/2024 e o Rol Taxativo de Parcelas Admitidas"}, {"target_num": 6, "target_title": "A Advocacia Pública, Honorários de Sucumbência e o Regime dos Fundos Públicos"}, {"target_num": 7, "target_title": "Governança Estrutural, Transparência Ativa, Resolução CNJ/CNMP e Modulação Temporal"}]}, {"num": 6, "roman": "VI", "id": "ch06", "title": "A Advocacia Pública, Honorários de Sucumbência e o Regime dos Fundos Públicos", "core_idea": "O STF julgou procedente a Rcl 88.319 (Praia Grande/SP) e reafirmou a tese da ADI 6053, assentando que os honorários advocatícios de sucumbência devidos aos procuradores públicos têm natureza remuneratória pública, submetem-se integralmente ao teto dos Ministros do STF (sem o redutor de 90,25% para os procuradores municipais) e seus fundos gestores são de direito público, sujeitos ao controle dos Tribunais de Contas e à regência exclusiva por lei.", "frameworks": [{"name": "Submissão Plena ao Teto Constitucional do STF (Itens 11 e 12 da Tese)", "desc": "A soma do subsídio/vencimento do advogado público com a sua cota-parte de honorários advocatícios de sucumbência não pode, sob hipótese alguma, exceder o subsídio mensal de Ministro do STF (art. 37, XI da CF, R$ 46.366,19).", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Teto Integral para a Advocacia Pública Municipal (Rcl 88.319 - Afastamento do Subteto de 90,25%)", "desc": "Os Procuradores Municipais têm direito ao teto correspondente ao subsídio integral dos Ministros do STF, sem a incidência do redutor de 90,25% aplicável a outras carreiras ou do subsídio do Prefeito, harmonizando a jurisprudência do Tema 510 com a especificidade da advocacia pública.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Regime Jurídico de Direito Público dos Fundos de Honorários (Item 13 da Tese)", "desc": "- *Natureza Jurídica*: Os fundos de rateio de honorários são contas de natureza estritamente pública.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["*Natureza Jurídica*: Os fundos de rateio de honorários são contas de natureza estritamente pública.", "*Controle Obrigatório*: Submetem-se aos controles internos da administração e ao controle externo do TCU e dos Tribunais de Contas dos Estados/Municípios.", "*Destinação Exclusiva*: Os recursos dos fundos NÃO podem custear nenhuma outra parcela remuneratória ou indenizatória, salvo:", "Pagamento dos próprios honorários advocatícios aos procuradores (até o teto);", "Auxílio-saúde ressarcitório comprovado;", "Auxílio-alimentação regular.", "*Reserva de Lei*: A gestão e destinação dos saldos presentes e futuros sujeitam-se unicamente a lei formal, sendo taxativamente vedada a regulamentação por resolução administrativa interna."]}], "concepts": [{"term": "Honorários Advocatícios de Sucumbência Públicos", "desc": "Verbas decorrentes da vitória processual dos entes estatais que pertencem aos advogados públicos por força de lei, mas mantêm regime de direito público."}, {"term": "Rcl 88.319", "desc": "Reclamação Constitucional do Município de Praia Grande/SP que fixou a incidência do teto de Ministro do STF para procuradores municipais."}, {"term": "ADI 6053", "desc": "Ação Direta paradigma que declarou constitucional a percepção de honorários por advogados públicos, desde que sujeitos ao teto do art. 37, XI da CF."}, {"term": "Fundo Especial de Honorários", "desc": "Conta pública vinculada que arrecada a sucumbência processual e realiza a distribuição proporcional."}, {"term": "Abate-Teto Sucumbencial", "desc": "Redutor aplicado à parcela de honorários sempre que a soma com o subsídio ultrapassar R$ 46.366,19."}], "mental_models": [{"name": "O Honorário é Público no Regime e no Limite", "desc": "O fato de a sucumbência decorrer do êxito na causa não privatiza o montante nem cria imunidade ao art. 37, XI da CF."}, {"name": "Fundos Transparentes vs. Caixas-Pretas", "desc": "O Fundo de Honorários é uma dotação pública sob auditoria do Tribunal de Contas, não uma associação privada livre de prestação de contas."}], "anti_patterns": [{"name": "Exclusão dos Honorários do Abate-Teto", "wrong": "Pagar subsídio de R$ 35.000,00 + rateio de honorários de R$ 25.000,00 = R$ 60.000,00 líquidos sob alegação de verba alimentar privada", "reason": "Violação direta da ADI 6053 e dos Itens 11 e 12 da Tese do Tema 966."}, {"name": "Desvio de Finalidade do Fundo", "wrong": "Utilizar recursos acumulados no Fundo de Honorários para pagar gratificações de gabinete ou indenizações extraordinárias aos membros", "reason": "Violação categórica do Item 13 da Tese."}, {"name": "Regulação por Portaria/Resolução Interna", "wrong": "A chefia da Procuradoria editar portaria dispondo sobre a aplicação dos saldos do Fundo", "reason": "A matéria exige estrita reserva de lei em sentido formal (Item 13 in fine)."}], "worked_example": "*Caso Prático dos Procuradores Municipais de Praia Grande/SP (Rcl 88.319)*:\n- Vencimento básico do Procurador Municipal: R$ 22.000,00.\n- Vantagens pessoais (quinquênios/sexta-parte): R$ 8.000,00.\n- Cota-parte do Fundo de Honorários de Sucumbência: R$ 24.000,00.\n- Teto aplicado pelo Tribunal de Justiça de SP anteriormente: Subteto de 90,25% (R$ 41.845,49).\n\n*Aplicação da Decisão do STF*:\n1. **Fixação do Teto Correto**: Afasta-se o redutor de 90,25% e aplica-se o teto de 100% do STF = **R$ 46.366,19**.\n2. **Soma da Remuneração Total**: R$ 22.000,00 + R$ 8.000,00 + R$ 24.000,00 = **R$ 54.000,00**.\n3. **Aplicação do Abate-Teto**: R$ 54.000,00 - R$ 46.366,19 = **Glosa de R$ 7.633,81** sobre a parcela de honorários.\n4. **Valor Bruto a Pagar**: R$ 46.366,19. O saldo glosado de R$ 7.633,81 permanece no Fundo Público de Honorários.", "takeaways": ["A soma do subsídio e honorários advocatícios nunca pode ultrapassar o teto do STF (R$ 46.366,19).", "Procuradores municipais submetem-se ao teto do STF sem o redutor de 90,25% (Rcl 88.319).", "Os Fundos de Honorários são públicos e fiscalizados pelos Tribunais de Contas.", "É proibido usar verbas de honorários para custear penduricalhos ou outros adicionais.", "Toda gestão de fundos de honorários depende de lei ordinária, vedada resolução administrativa."], "connects": [{"target_num": 1, "target_title": "A Evolução Constitucional do Subsídio e o Colapso do Modelo de Parcela Única"}, {"target_num": 2, "target_title": "Simetria Constitucional Magistratura-MP e Escalonamento dos Subsídios Estaduais"}, {"target_num": 5, "target_title": "Declaração de Inconstitucionalidade, Expurgo de Penduricalhos e Trava de Retroativos"}, {"target_num": 7, "target_title": "Governança Estrutural, Transparência Ativa, Resolução CNJ/CNMP e Modulação Temporal"}]}, {"num": 7, "roman": "VII", "id": "ch07", "title": "Governança Estrutural, Transparência Ativa, Resolução CNJ/CNMP e Modulação Temporal", "core_idea": "O STF conferiu natureza de processo estrutural ao julgamento da ADI 6606, delegando à Presidência do CNJ e do CNMP o monitoramento contínuo da implementação das balizas e a edição de Resolução Conjunta padronizadora, estabelecendo a obrigatoriedade de transparência ativa nominal com responsabilização pessoal dos gestores, e modulando a vigência da decisão a partir do mês-base abril/2026 (folha de pagamento de maio/2026).", "frameworks": [{"name": "Jurisdição Constitucional Estrutural no Sistema Remuneratório (Item 16 da Tese)", "desc": "O STF reconheceu que o colapso remuneratório exige uma abordagem estruturante e cooperativa, atribuindo à Presidência do CNJ o encargo de coordenar a execução das ordens judiciais e subsidiar o Congresso Nacional na elaboração do Estatuto Nacional da Magistratura (CF, art. 93).", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}, {"name": "Resolução Conjunta CNJ/CNMP de Padronização de Rubricas (Itens 5.3 e 10 da Tese)", "desc": "- Instrumento normativo obrigatório que uniformizará as nomenclaturas e limites de todas as rubricas indenizatórias e auxílios admitidos na federação.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["Instrumento normativo obrigatório que uniformizará as nomenclaturas e limites de todas as rubricas indenizatórias e auxílios admitidos na federação.", "*Efeito Prático*: Extingue rubricas genéricas, códigos contábeis opacos e nomenclaturas locais disfarçadas."]}, {"name": "Princípio da Transparência Ativa Nominal e Responsabilidade Pessoal (Item 15 da Tese)", "desc": "- *Obrigação*: Tribunais, MPs, Defensorias, Procuradorias e Tribunais de Contas devem publicar, mensalmente, em seus sites oficiais, o valor exato e individualizado percebido por cada membro.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["*Obrigação*: Tribunais, MPs, Defensorias, Procuradorias e Tribunais de Contas devem publicar, mensalmente, em seus sites oficiais, o valor exato e individualizado percebido por cada membro.", "*Detalhe*: Especificação clara de cada rubrica (subsídio, VTM, cumulação, diárias, saúde).", "*Sanção Pessoal*: Os gestores e ordenadores de despesa respondem pessoalmente por quaisquer discrepâncias ou omissões entre os valores divulgados e os efetivamente creditados na conta bancária."]}, {"name": "Modulação Temporal e Autorização Monocrática (Itens 17 e 18 da Tese)", "desc": "- *Vigência*: A decisão produz efeitos a partir do mês-base **abril/2026**, refletindo na folha de pagamento creditada em **maio/2026**.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": ["*Vigência*: A decisão produz efeitos a partir do mês-base **abril/2026**, refletindo na folha de pagamento creditada em **maio/2026**.", "*Julgamento Monocrático*: Autorização expressa para que os Ministros Relatores do STF decidam monocraticamente todos os processos, reclamações e ações diretas que versem sobre o mesmo tema."]}, {"name": "Delimitação Subjetiva Estrita (Item 14 da Tese)", "desc": "A tese baseia-se nas leis orgânicas expressas da Magistratura e MP; não se estende às demais carreiras estatutárias comuns ou celetistas, que permanecem regidas por seus estatutos próprios até a lei ordinária nacional da EC 135/2024.", "when_to_use": "", "how": "", "why": "", "extra_keys": [], "sub_items": []}], "concepts": [{"term": "Processo Estrutural", "desc": "Técnica decisória voltada à reforma progressiva de políticas públicas e estruturas institucionais complexas."}, {"term": "Transparência Ativa Nominal", "desc": "Divulgação pública detalhada com nome, cargo, matrícula e discriminação de todas as verbas do contracheque."}, {"term": "Mês-base Abril/2026", "desc": "Marco temporal inicial da eficácia da decisão (folha paga em maio/2026)."}, {"term": "Responsabilidade Pessoal do Gestor", "desc": "Sujeição do presidente do tribunal ou procurador-geral a sanções de improbidade, crime de responsabilidade e ressarcimento ao erário em caso de fraude contábil."}, {"term": "Autorização Monocrática", "desc": "Poder concedido aos relatores do STF para liquidar o passivo de ações sobre teto e penduricalhos."}], "mental_models": [{"name": "A Luz Solar como Melhor Desinfetante", "desc": "A publicação nominal e transparente de cada centavo impede o retorno subterrâneo de penduricalhos."}, {"name": "A Transição com Data Certa", "desc": "A modulação para abril/2026 confere prazo razoável para os setores de folha de pagamento reconfigurarem seus sistemas ERP e excluírem as rubricas inconstitucionais."}], "anti_patterns": [{"name": "Ocultação de Rubricas sob Rótulos Genéricos", "wrong": "Publicar no Portal da Transparência o valor global sob \"Outras Indenizações\"", "reason": "Violação expressa ao Item 15 da Tese e infração passível de responsabilização pessoal do gestor."}, {"name": "Alegação de Falta de Sistema Contábil para Justificar Atraso", "wrong": "Manter o pagamento de penduricalhos após abril/2026 alegando dificuldades técnicas", "reason": "O STF concedeu período de transição deliberado; o descumprimento atrai intervenção imediata do CNJ/STF."}, {"name": "Extensão Indevida da Tese a Servidores Comuns", "wrong": "Tentar cortar direitos de servidores de apoio estatutários com base no Tema 966", "reason": "O Item 14 veda expressamente a aplicação extensiva ou por analogia a outras carreiras."}], "worked_example": "*Plano de Ação de Conformidade de Tribunal Estadual para o Mês-Base Abril/2026*:\n1. **Mapeamento de Folha (Março/2026)**: Identificar todas as rubricas ativas no sistema de pagamento.\n2. **Expurgo Automático (1º de Abril/2026)**: Cancelar imediatamente no sistema os códigos de auxílio-combustível, licença compensatória por acervo (1 por 3), auxílio-moradia genérico e gratificações de comissões/plenário.\n3. **Implementação das Travas**:\n   - Parametrizar a VTM com alíquota de 5% por quinquênio e teto de 35%.\n   - Criar algoritmo de trava de 35% sobre a soma de diárias + cumulação real + difícil provimento.\n   - Bloquear pagamentos de retroativos administrativos pré-fevereiro/2026.\n4. **Publicação no Portal da Transparência (Maio/2026)**: Lançar a folha nominal aberta, discriminando subsídio, VTM, verbas indenizatórias e deduções legais.", "takeaways": ["O julgamento tem natureza de processo estrutural coordenado pela Presidência do CNJ.", "A Resolução Conjunta CNJ/CNMP fixará a padronização nacional de rubricas.", "A divulgação nominal detalhada é obrigatória sob responsabilidade pessoal dos gestores.", "A decisão entra em vigor a partir do mês-base abril/2026 (folha de maio/2026).", "Os relatores do STF estão autorizados a julgar monocraticamente os processos pendentes.", "A tese aplica-se à Magistratura, MP, Tribunais de Contas, Defensoria e Advocacia Pública, não se estendendo a servidores comuns."], "connects": [{"target_num": 1, "target_title": "A Evolução Constitucional do Subsídio e o Colapso do Modelo de Parcela Única"}, {"target_num": 3, "target_title": "O Regime Transitório da EC 135/2024 e o Rol Taxativo de Parcelas Admitidas"}, {"target_num": 5, "target_title": "Declaração de Inconstitucionalidade, Expurgo de Penduricalhos e Trava de Retroativos"}, {"target_num": 6, "target_title": "A Advocacia Pública, Honorários de Sucumbência e o Regime dos Fundos Públicos"}]}];
+  const GLOSSARY_DATA = [{"term": "Abono de Permanência", "definition": "Vantagem de caráter previdenciário devida ao servidor que preenche requisitos para aposentadoria voluntária e opta por permanecer em atividade; fica fora dos subtetos indenizatórios por força do art. 40, § 19 da CF (Ch 03).", "chapter_ref": ""}, {"term": "Abate-Teto", "definition": "Mecanismo de retenção automática sobre a folha de pagamento de qualquer montante remuneratório que ultrapasse o teto constitucional do STF (Ch 01, Ch 06).", "chapter_ref": ""}, {"term": "Acervo Processual", "definition": "Volume total de processos judiciais em tramitação sob a responsabilidade de uma unidade jurisdicional (Ch 01, Ch 04, Ch 05).", "chapter_ref": ""}, {"term": "ADI 6601 (Paraná)", "definition": "Ação Direta em que o STF julgou constitucional a vinculação de subsídios de desembargadores e membros do MP estadual a percentuais do STF/PGR (Ch 02).", "chapter_ref": ""}, {"term": "ADI 6604 (Paraíba)", "definition": "Ação Direta em que o STF reiterou a constitucionalidade da vinculação automática de subsídios estaduais aos ministros do STF (Ch 02).", "chapter_ref": ""}, {"term": "ADI 6606 (Minas Gerais)", "definition": "Ação Direta líder (Rel. Min. Gilmar Mendes) que fixou o regime estrutural transitório, a tese do Tema 966 e a expurgação de penduricalhos (Ch 01 a Ch 07).", "chapter_ref": ""}, {"term": "Advocacia Pública", "definition": "Carreira de Estado composta por procuradores federais, estaduais, distritais e municipais, submetida ao teto do STF e ao regime público de honorários (Ch 06).", "chapter_ref": ""}, {"term": "Ajuda de Custo", "definition": "Parcela indenizatória devida estritamente em virtude de remoção, promoção ou nomeação que acarrete efetiva mudança de domicílio legal (Ch 03).", "chapter_ref": ""}, {"term": "Alteridade de Órgão", "definition": "Critério jurídico que exige atuação concomitante em duas ou mais unidades judiciárias/ministeriais autônomas para legitimar a gratificação por acúmulo (Ch 04).", "chapter_ref": ""}, {"term": "Auxílio-Alimentação", "definition": "Verba indenizatória mensal destinada à subsistência alimentar, com valor padronizado pelo CNJ/CNMP, vedadas cotas natalinas extraordinárias (Ch 03, Ch 05).", "chapter_ref": ""}, {"term": "Auxílio-Combustível", "definition": "Verba de ressarcimento de transporte extinta e declarada inconstitucional pelo STF no Item 7 da Tese (Ch 05).", "chapter_ref": ""}, {"term": "Auxílio-Moradia", "definition": "Parcela indenizatória de habitação estritamente condicionada e proibida quando concedida de modo genérico ou em cumulação indevida (Ch 05).", "chapter_ref": ""}, {"term": "Auxílio-Saúde Ressarcitório", "definition": "Parcela de reembolso de despesas médico-hospitalares ou planos de saúde efetivamente comprovados mediante documento fiscal (Ch 03).", "chapter_ref": ""}, {"term": "CNJ (Conselho Nacional de Justiça)", "definition": "Órgão de cúpula do controle administrativo e financeiro do Poder Judiciário, encarregado da governança estrutural do Tema 966 (Ch 07).", "chapter_ref": ""}, {"term": "CNMP (Conselho Nacional do Ministério Público)", "definition": "Órgão de controle administrativo e financeiro do Ministério Público, coautor da Resolução Conjunta de padronização (Ch 07).", "chapter_ref": ""}, {"term": "Cumulação de Jurisdição", "definition": "Exercício simultâneo de atribuições jurisdicionais em mais de um órgão judiciário (Leis 13.093/15 e 14.726/23) (Ch 04).", "chapter_ref": ""}, {"term": "Cumulação de Ofícios", "definition": "Atuação concomitante em mais de uma promotoria ou procuradoria de justiça no âmbito do Ministério Público (Lei 13.095/15) (Ch 04).", "chapter_ref": ""}, {"term": "Diárias", "definition": "Indenização para custeio de alimentação e pousada devida ao membro em razão de deslocamento eventual da sede de lotação em serviço (Ch 02, Ch 03).", "chapter_ref": ""}, {"term": "Difícil Provimento", "definition": "Gratificação legal devida ao exercício funcional em comarcas inóspitas, distantes ou de difícil fixação de membros (Ch 03).", "chapter_ref": ""}, {"term": "EC nº 19/1998", "definition": "Emenda da Reforma Administrativa que introduziu a regra do subsídio em parcela única (art. 39, § 4º da CF) (Ch 01).", "chapter_ref": ""}, {"term": "EC nº 41/2003", "definition": "Emenda que unificou o teto salarial no subsídio dos Ministros do STF (art. 37, XI da CF) (Ch 01).", "chapter_ref": ""}, {"term": "EC nº 45/2004", "definition": "Reforma do Judiciário que consagrou a simetria entre Magistratura e Ministério Público (art. 129, § 4º da CF) (Ch 02).", "chapter_ref": ""}, {"term": "EC nº 135/2024", "definition": "Emenda que alterou o art. 37, § 11 da CF, exigindo lei ordinária nacional do Congresso para disciplinar parcelas indenizatórias imunes ao teto (Ch 01, Ch 03).", "chapter_ref": ""}, {"term": "Escalonamento de Subsídios", "definition": "Sistema proporcional e hierarquizado de remuneração das instâncias judiciais e ministeriais ancorado no STF (Ch 02).", "chapter_ref": ""}, {"term": "Fundo de Honorários", "definition": "Conta de natureza pública destinada à arrecadação e partilha de honorários sucumbenciais da advocacia pública (Ch 06).", "chapter_ref": ""}, {"term": "Gratificação por Encargo de Concurso", "definition": "Vantagem eventual pelo exercício de bancas examinadoras, submetida a limites rígidos e declarada inconstitucional quando abusiva (Ch 05).", "chapter_ref": ""}, {"term": "Gratificação Eleitoral", "definition": "Vantagem constitucional paga por funções perante a Justiça Eleitoral (CF, art. 121, § 2º), imune ao limite dos 35% (Ch 03).", "chapter_ref": ""}, {"term": "Honorários de Sucumbência", "definition": "Verba devida pela parte vencida no processo, partilhada entre advogados públicos sob teto estrito do STF (Ch 06).", "chapter_ref": ""}, {"term": "Indenização de Férias", "definition": "Conversão em pecúnia de período de férias não usufruídas por necessidade do serviço, estritamente limitada a 30 dias (Ch 03, Ch 05).", "chapter_ref": ""}, {"term": "Licença Compensatória 1 por 3", "definition": "Mecanismo de outorga de 1 folga para cada 3 dias trabalhados declarado inconstitucional pelo STF (Ch 01, Ch 05).", "chapter_ref": ""}, {"term": "Licença-Prêmio", "definition": "Licença por assiduidade cuja conversão em dinheiro foi categoricamente proibida pelo STF no Item 8 da Tese (Ch 05).", "chapter_ref": ""}, {"term": "LOMAN (LC 35/1979)", "definition": "Lei Orgânica da Magistratura Nacional (Ch 01, Ch 03).", "chapter_ref": ""}, {"term": "LONMP (Lei 8.625/1993)", "definition": "Lei Orgânica Nacional do Ministério Público (Ch 01, Ch 03).", "chapter_ref": ""}, {"term": "LOMPU (LC 75/1993)", "definition": "Lei Orgânica do Ministério Público da União (Ch 01, Ch 03).", "chapter_ref": ""}, {"term": "Mês-base Abril/2026", "definition": "Marco temporal de eficácia mandatória da decisão da ADI 6606 na folha de pagamento (Ch 07).", "chapter_ref": ""}, {"term": "Pagamento Balão", "definition": "Pagamento atípico e concentrado de valores retroativos suspensos por determinação do STF (Ch 05).", "chapter_ref": ""}, {"term": "Parcela Única", "definition": "Modelo de subsídio que proíbe qualquer adicional pelo exercício normal das funções do cargo (Ch 01).", "chapter_ref": ""}, {"term": "Penduricalho", "definition": "Rubrica remuneratória criada sem amparo em lei nacional e mascarada de indenização para burlar o teto (Ch 01, Ch 05).", "chapter_ref": ""}, {"term": "Plantão Judiciário", "definition": "Atuação em regime de sobreaviso ou escala em fins de semana e feriados; confere direito a folga, sendo proibida a indenização em dinheiro (Ch 05).", "chapter_ref": ""}, {"term": "Processo Estrutural", "definition": "Modelo decisório voltado à reorganização institucional cooperativa e contínua sob liderança judicial (Ch 07).", "chapter_ref": ""}, {"term": "Rcl 88.319", "definition": "Reclamação julgada procedente para assegurar o teto de Ministro do STF aos procuradores municipais de Praia Grande/SP (Ch 06).", "chapter_ref": ""}, {"term": "RE 968.646", "definition": "Recurso da União desprovido para manter a paridade Magistratura-MP em diárias (Ch 02).", "chapter_ref": ""}, {"term": "RE 1.059.466", "definition": "Recurso da União desprovido para manter a simetria em licenças-prêmio (Ch 02).", "chapter_ref": ""}, {"term": "Regime Transitório", "definition": "Regramento vinculante do Tema 966 vigente até a promulgação de lei ordinária nacional pelo Congresso (Ch 03).", "chapter_ref": ""}, {"term": "Resolução Conjunta CNJ/CNMP", "definition": "Ato regulamentar unificado que padronizará todas as rubricas e limites na federação (Ch 07).", "chapter_ref": ""}, {"term": "Simetria Constitucional", "definition": "Princípio da equiparação ontológica de direitos e deveres entre Magistratura e Ministério Público (Ch 02).", "chapter_ref": ""}, {"term": "Subteto Estadual de 90,25%", "definition": "Limite remuneratório de desembargadores e procuradores de justiça estaduais (Ch 02).", "chapter_ref": ""}, {"term": "Teto Constitucional do STF", "definition": "Valor monetário de R$ 46.366,19 (art. 37, XI da CF) (Ch 01, Ch 03).", "chapter_ref": ""}, {"term": "Tema 966 da Repercussão Geral", "definition": "Paradigma vinculante sobre equiparação, teto e verbas indenizatórias da Justiça (Ch 01 a Ch 07).", "chapter_ref": ""}, {"term": "Transparência Ativa Nominal", "definition": "Publicação mensal nominal de todos os vencimentos e rubricas no Portal da Transparência (Ch 07).", "chapter_ref": ""}, {"term": "VTM (Valorização por Tempo de Magistratura/MP)", "definition": "Adicional de 5% por quinquênio até o teto de 35% para ativos e inativos (Ch 03).", "chapter_ref": ""}];
+  const CHEATSHEET_DATA = {"rules": [{"scenario": "VTM (Antiguidade)", "rule": "Conceder 5% por quinquênio de atividade jurídica até o teto estrito de 35% (ativos e inativos).", "basis": "Item 5.1"}, {"scenario": "Soma de Indenizações Mensais", "rule": "Somar todas as indenizações do Item 5.2 e travar compulsoriamente no subteto de 35% do subsídio.", "basis": "Item 5.2"}, {"scenario": "Folgas 1 por 3 e Acervo", "rule": "Cessar imediatamente todo pagamento ou conversão em dinheiro de licença por acervo ou folgas 1x3.", "basis": "Item 7"}, {"scenario": "Licença-Prêmio / Plantões", "rule": "Proibida em absoluto a conversão em pecúnia; o direito resume-se ao gozo de folga compensatória.", "basis": "Item 8"}, {"scenario": "Pagamentos Retroativos (\"Balão\")", "rule": "Suspender imediatamente pagamentos administrativos e judiciais sem trânsito em julgado anteriores a fev/2026.", "basis": "Itens 5.4 e 11"}, {"scenario": "Auxílio-Saúde", "rule": "Pagar apenas mediante comprovação de gasto médico suportado (fora do limite de 35%).", "basis": "Item 6"}, {"scenario": "Cumulação de Jurisdição", "rule": "Pagar gratificação de até 1/3 apenas se houver atuação simultânea em varas/órgãos distintos; vedado em Turmas/Pleno/Órgão Especial.", "basis": "Item 5.5 e 5.6"}, {"scenario": "Advocacia Municipal (Honorários)", "rule": "Submeter a soma de subsídio + honorários ao teto de 100% de Ministro do STF (sem subteto de 90,25%).", "basis": "Item 11, Rcl 88.319"}, {"scenario": "Fundos de Honorários", "rule": "Fundo público gerido por lei e fiscalizado pelo Tribunal de Contas; proibido custear penduricalhos.", "basis": "Item 13"}, {"scenario": "Transparência Ativa", "rule": "Publicar mensalmente no site todas as rubricas detalhadas, sob responsabilidade pessoal do gestor.", "basis": "Item 15"}, {"scenario": "Modulação Temporal", "rule": "Vigência vinculante a partir do mês-base **abril/2026** (folha paga em **maio/2026**).", "basis": "Item 17"}], "verbas_permitidas": ["Subsídio Básico (até R$ 46.366,19)", "VTM de Antiguidade (5% por quinquênio, máx 35%)", "Diárias (padrão STF/PGR)", "Ajuda de Custo (remoção/mudança de domicílio)", "Pró-labore por Magistério", "Comarca de Difícil Provimento", "Férias Indenizadas (estrito máx de 30 dias)", "Cumulação Real de Jurisdição/Ofício (máx 1/3)", "13º Salário e 1/3 de Férias Constitucionais", "Auxílio-Saúde Ressarcitório Comprovado"], "verbas_proibidas": ["Licença compensatória por acervo (1 folga p/ 3)", "Auxílio-combustível / indenização de internet", "Auxílio-moradia abusivo / genérico", "Auxílio-alimentação extraordinário/natalino", "Gratificação por comissões, Turmas ou Pleno", "Licença remuneratória para curso no exterior", "Gratificação por encargo de concurso atípica", "Conversão em pecúnia de licença-prêmio/plantão", "Pagamentos balão retroativos sem aval do STF", "Auxílios instituídos por resolução administrativa"], "thresholds": [{"label": "Teto Geral STF (CF, art. 37, XI)", "value": "R$ 46.366,19", "desc": "Limite máximo intransponível em espécie para toda a administração pública nacional."}, {"label": "Subteto Estadual Magistratura/MP (CF, art. 93, V)", "value": "90,25% (R$ 41.845,49)", "desc": "Limite remuneratório para Desembargadores e Procuradores de Justiça estaduais."}, {"label": "Subteto VTM / Quinquênio (Item 5.1)", "value": "35,00%", "desc": "5% a cada 5 anos de efetivo exercício jurídico, até o máximo estrito de 35%."}, {"label": "Subteto Global de Indenizações (Item 5.2)", "value": "35,00%", "desc": "A soma de todas as verbas indenizatórias mensais autorizadas não pode exceder 35% do subsídio."}, {"label": "Teto de Cumulação de Vara/Ofício (Item 5.5)", "value": "33,33% (1/3)", "desc": "Gratificação por acúmulo real de órgão, inserida dentro da trava dos 35% indenizatórios."}, {"label": "Limite de Indenização de Férias (Item 5.2)", "value": "Máx 30 dias", "desc": "Vedada conversão sistemática de férias em dinheiro além de 30 dias anuais."}, {"label": "Marco Temporal de Eficácia (Item 17)", "value": "Mês-base Abril/2026", "desc": "Vigência vinculante em todas as folhas de pagamento creditadas a partir de Maio/2026."}], "smells": [{"num": 1, "title": "Folga que vira dinheiro todo mês", "desc": "Concessão de dias de folga por produtividade ou plantão com conversão automática em pecúnia mensal.", "violation": "Violação do Item 8 (Vedação à Monetização)."}, {"num": 2, "title": "Auxílio com valor fixo sem nota fiscal", "desc": "Crédito de auxílio-saúde ou transporte sem prévia comprovação documental da despesa suportada.", "violation": "Violação do Item 6 (Ressarcimento Estrito Comprovado)."}, {"num": 3, "title": "Acúmulo de acervo sem assumir outra comarca", "desc": "Gratificação pelo volume processual na própria vara de lotação do magistrado ou promotor.", "violation": "Violação dos Itens 5.5 e 5.6 (Critério da Alteridade de Órgão)."}, {"num": 4, "title": "Pagamento surpresa de atrasados no fim de ano", "desc": "Desembolso de passivos administrativos pré-fevereiro/2026 sem auditoria de corregedoria e aval do STF.", "violation": "Violação dos Itens 5.4 e 11 (Suspensão e Referendo do STF)."}, {"num": 5, "title": "Campo 'Outros Proventos' inflado no portal", "desc": "Agrupamento opaco de verbas elevadas sob rubricas genéricas nos portais de transparência.", "violation": "Violação do Item 15 (Transparência Ativa Nominal e Responsabilidade Pessoal)."}]};
+  const PATTERNS_DATA = [{"title": "Padrão 1: Teste Trifásico de Constitucionalidade de Verba Indenizatória", "when_to_use": "Ao analisar qualquer projeto de lei, ato normativo, resolução ou pedido administrativo de pagamento de verba fora do subsídio.", "how": "1. **Fase 1 (Reserva de Lei Nacional - CF, art. 37, § 11)**: A parcela está expressamente prevista em lei ordinária de caráter nacional aprovada pelo Congresso Nacional ou no rol taxativo do Item 5.2 do Tema 966? Se amparada apenas em lei estadual ou resolução, é **inconstitucional**.\n2. **Fase 2 (Natureza Ontológica Ressarcitória)**: A verba corresponde a dano efetivo, despesa comprovada em serviço ou sacrifício patrimonial direto? Se for pagamento fixo mensal sem comprovação documental de gasto, é remuneração disfarçada e submete-se ao **teto do art. 37, XI**.\n3. **Fase 3 (Submissão à Trava dos 35%)**: A verba, somada às demais indenizatórias mensais do beneficiário, ultrapassa 35% do subsídio? Se ultrapassar, aplica-se a **glosa imediata** do excedente.", "trade_offs": "Elimina a discricionariedade corporativa e estanca a criação de penduricalhos, exigindo disciplina orçamentária estrita."}, {"title": "Padrão 2: Protocolo de Bloqueio e Auditoria de Passivos Retroativos (\"Pagamento Balão\")", "when_to_use": "Ao receber requerimentos de pagamento de passivos históricos (URV, PAE, diferenças de subsídios, ATS acumulado) reconhecidos administrativamente ou em juízo sem trânsito em julgado.", "how": "1. **Verificação de Trânsito em Julgado**: O direito está amparado em sentença com trânsito em julgado? Se não houver, ou se for decisão administrativa pré-fevereiro/2026, **suspender imediatamente o pagamento** (Item 5.4 e Item 11).\n2. **Submissão à Auditoria**: Encaminhar a memória de cálculo e os autos à Corregedoria Nacional do CNJ ou CNMP.\n3. **Aguardar Resolução Conjunta**: Verificar conformidade com os critérios objetivos da Resolução Conjunta CNJ/CNMP.\n4. **Referendo do Plenário do STF**: Nenhum valor pode ser liberado sem prévia homologação pelo Plenário do STF.", "trade_offs": "Evita desembolsos orçamentários abruptos de centenas de milhões de reais e assegura igualdade e moralidade no pagamento de créditos públicos."}, {"title": "Padrão 3: Algoritmo de Cálculo do Teto Global e Subtetos Remuneratórios", "when_to_use": "No fechamento mensal da folha de pagamento de magistrados e membros do Ministério Público.", "how": "```python\ndef calcular_folha_magistratura_mp(subsidio_base, quinquenios_tempo_servico, parcelas_item_5_2, despesas_saude_comprovadas, decimo_terceiro=0, terco_ferias=0, abono_permanencia=0):\n    # 1. Parcela de Antiguidade (VTM - Item 5.1): 5% por quinquênio, máx 35%\n    pct_vtm = min(0.35, quinquenios_tempo_servico * 0.05)\n    valor_vtm = subsidio_base * pct_vtm\n    \n    # 2. Pacote Indenizatório (Item 5.2): Soma travada em máx 35% do subsídio\n    soma_indenizatorias_brutas = sum(parcelas_item_5_2.values())\n    teto_indenizatorias = subsidio_base * 0.35\n    valor_indenizatorio_liquido = min(soma_indenizatorias_brutas, teto_indenizatorias)\n    \n    # 3. Exceções Constitucionais Externas (Item 6)\n    valor_saude = despesas_saude_comprovadas # Reembolso estrito comprovado\n    valor_externo = decimo_terceiro + terco_ferias + abono_permanencia + valor_saude\n    \n    total_bruto = subsidio_base + valor_vtm + valor_indenizatorio_liquido + valor_externo\n    glosa_indenizatoria = max(0, soma_indenizatorias_brutas - teto_indenizatorias)\n    \n    return {\n        \"subsidio\": subsidio_base,\n        \"vtm\": valor_vtm,\n        \"indenizatorias_autorizadas\": valor_indenizatorio_liquido,\n        \"glosa_indenizatorias\": glosa_indenizatoria,\n        \"excecoes_constitucionais\": valor_externo,\n        \"total_bruto_mensal\": total_bruto\n    }\n```", "trade_offs": "Garante precisão matemática inatacável e conformidade imediata com o Tema 966."}, {"title": "Padrão 4: Teste de Legitimidade da Cumulação de Jurisdição e Ofícios", "when_to_use": "Ao deferir gratificação por acúmulo de juízos ou ofícios a juízes e promotores.", "how": "1. **Passo 1 (Alteridade de Órgão)**: Há assunção simultânea de unidade jurisdicional ou promotoria autônoma distinta (ex.: duas varas, juizado especial, turma recursal)? Se SIM, prosseguir. Se NÃO (trabalho ordinário na própria vara), **indeferir**.\n2. **Passo 2 (Vedações de Funções Inerentes)**: A função pleiteada decorre de atuação em Turma, Seção, Pleno, Órgão Especial, Conselho Superior ou Comissões? Se SIM, **indeferir expressamente** (Item 5.5).\n3. **Passo 3 (Limite Legal)**: Aplicar o limite de 1/3 do subsídio (Leis 13.093/15 e 13.095/15) e inserir o valor no cômputo da trava global dos 35% do Item 5.2.", "trade_offs": "Remunera com justiça a sobrecarga de gerir múltiplos juízos sem inflar despesas com atribuições normais de gabinete."}, {"title": "Padrão 5: Protocolo de Conformação dos Fundos de Honorários da Advocacia Pública", "when_to_use": "Na gestão financeira e contábil de procuradorias da União, Estados e Municípios (Rcl 88.319 e ADI 6053).", "how": "1. **Controle de Teto Individual**: Somar o subsídio do procurador com sua cota-parte mensal de honorários; abater no teto do STF (R$ 46.366,19) sem redutor de 90,25% para procuradores municipais.\n2. **Destinação Vinculada dos Recursos**: O saldo remanescente no Fundo Público de Honorários não pode ser rateado em novas verbas, podendo custear apenas: (a) honorários até o teto; (b) auxílio-saúde comprovado; (c) auxílio-alimentação.\n3. **Prestação de Contas**: Submeter balancetes mensais ao TCU/TCE e manter regência estritamente por lei formal.", "trade_offs": "Protege a remuneração por mérito e vitória processual da advocacia pública sob rigoroso controle republicano."}, {"title": "Padrão 6: Matriz de Transparência Ativa e Governança Estrutural", "when_to_use": "Na publicação mensal dos contracheques nos portais da transparência dos órgãos de justiça.", "how": "1. **Abertura Nominal Completa**: Publicar o nome, cargo, lotação e CPF descaracterizado de cada membro.\n2. **Discriminação Analítica de Rubricas**: Abrir campos específicos para: Subsídio Básico, VTM, Cumulação de Vara, Diárias, Saúde, Outras Indenizações Autorizadas, Abate-Teto e Descontos Obrigatórios.\n3. **Certificação pelo Ordenador**: O Presidente do Tribunal ou Procurador-Geral deve assinar termo de conformidade, ciente da responsabilidade pessoal por divergências entre o publicado e o pago.", "trade_offs": "Constrangimento imediato contra fraudes remuneratórias e total acessibilidade aos órgãos de controle social."}];
+
+  let currentChapterIndex = 0; // 0-indexed (0 to 6)
+  let currentTab = 'overview';
+
+  function esc(s) {
+    if (s === null || s === undefined) return '';
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }
+
+  /* GLOBAL NAVIGATION FUNCTIONS */
+  window.go = function(sectionId) {
+    if (sectionId === 'capitulos') sectionId = 'chapters';
+    if (sectionId === 'glossario') sectionId = 'glossary';
+    if (sectionId === 'padroes') sectionId = 'patterns';
+    switchTab(sectionId);
+  };
+
+  window.switchTab = function(tabId) {
+    currentTab = tabId;
+    document.querySelectorAll('.nav-item').forEach(function(el) {
+      el.classList.remove('active');
+    });
+    document.querySelectorAll('.view-section').forEach(function(el) {
+      el.classList.remove('active');
+    });
+
+    var navEl = document.getElementById('nav-' + tabId);
+    var secEl = document.getElementById('sec-' + tabId);
+
+    if (navEl) navEl.classList.add('active');
+    if (secEl) secEl.classList.add('active');
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  window.renderChapter = function(chNumOrIdx) {
+    let idx = 0;
+    if (typeof chNumOrIdx === 'number') {
+      // If 1 to 7, convert to 0 to 6
+      if (chNumOrIdx >= 1 && chNumOrIdx <= CHAPTERS_DATA.length) {
+        idx = chNumOrIdx - 1;
+      } else {
+        idx = chNumOrIdx;
+      }
+    }
+    if (idx < 0) idx = 0;
+    if (idx >= CHAPTERS_DATA.length) idx = CHAPTERS_DATA.length - 1;
+
+    currentChapterIndex = idx;
+    displayChapter(idx);
+  };
+
+  window.goToChapter = function(chNum) {
+    window.renderChapter(chNum);
+    window.go('chapters');
+  };
+
+  window.navTo = function(chIdx) {
+    window.renderChapter(chIdx);
+  };
+
+  window.navPrev = function() {
+    if (currentChapterIndex > 0) {
+      window.renderChapter(currentChapterIndex - 1);
+    }
+  };
+
+  window.navNext = function() {
+    if (currentChapterIndex < CHAPTERS_DATA.length - 1) {
+      window.renderChapter(currentChapterIndex + 1);
+    }
+  };
+
+  /* INITIALIZATION */
+  document.addEventListener('DOMContentLoaded', function() {
+    initOverview();
+    initChapterPills();
+    displayChapter(0);
+    initGlossary(GLOSSARY_DATA);
+    initCheatsheet();
+    initPatterns();
+    setupKeyboardNav();
+  });
+
+  /* 1. OVERVIEW RENDERING */
+  function initOverview() {
+    document.getElementById('ov-thesis').textContent = OVERVIEW_DATA.thesis;
+
+    // Decision Tree
+    var treeCont = document.getElementById('overview-tree-container');
+    if (treeCont) {
+      var html = '';
+      OVERVIEW_DATA.decision_tree.forEach(function(step) {
+        html += '<div class="tree-step-card">' +
+          '<div class="tree-step-header">' + esc(step.step) + '</div>' +
+          '<div class="tree-branches-grid">';
+        step.branches.forEach(function(b) {
+          html += '<div class="tree-branch-box">' +
+            '<div class="tree-condition">' + esc(b.condition) + '</div>' +
+            '<div class="tree-result-row">' +
+              '<span class="tree-result-name">' + esc(b.result) + '</span>' +
+              '<span class="tree-result-badge">' + esc(b.badge) + '</span>' +
+            '</div>' +
+          '</div>';
+        });
+        html += '</div></div>';
+      });
+      treeCont.innerHTML = html;
+    }
+
+    // Chapters Structure Table
+    var tableBody = document.getElementById('overview-chapters-table');
+    if (tableBody) {
+      var tHtml = '';
+      OVERVIEW_DATA.chapters_summary.forEach(function(ch) {
+        tHtml += '<tr>' +
+          '<td class="font-mono" style="font-weight: 700; color: var(--latao-dark);">' + esc(ch.roman) + '</td>' +
+          '<td><strong>' + esc(ch.title) + '</strong></td>' +
+          '<td style="color: var(--tinta-muted);">' + esc(ch.focus) + '</td>' +
+          '<td style="text-align: center;">' +
+            '<button class="btn-action" style="padding: 4px 10px; font-size: 0.78rem;" onclick="goToChapter(' + ch.num + ')">Ver Cap. ' + ch.num + '</button>' +
+          '</td>' +
+        '</tr>';
+      });
+      tableBody.innerHTML = tHtml;
+    }
+  }
+
+  /* 2. CHAPTER RENDERING */
+  function initChapterPills() {
+    var pillsCont = document.getElementById('chapter-nav-pills');
+    if (!pillsCont) return;
+    var html = '';
+    CHAPTERS_DATA.forEach(function(ch, idx) {
+      html += '<button class="ch-pill-btn ' + (idx === 0 ? 'active' : '') + '" id="ch-pill-' + idx + '" onclick="renderChapter(' + (idx + 1) + ')">' +
+        '<span class="font-mono">' + esc(ch.roman) + '</span> · Cap. ' + ch.num +
+      '</button>';
+    });
+    pillsCont.innerHTML = html;
+  }
+
+  function displayChapter(idx) {
+    var ch = CHAPTERS_DATA[idx];
+    if (!ch) return;
+
+    // Update active pill
+    document.querySelectorAll('.ch-pill-btn').forEach(function(el, i) {
+      if (i === idx) el.classList.add('active');
+      else el.classList.remove('active');
+    });
+
+    // Hero
+    var heroEl = document.getElementById('ch-hero');
+    heroEl.setAttribute('data-roman', ch.roman);
+    document.getElementById('ch-eyebrow').textContent = 'CAPÍTULO ' + ch.roman + ' · ACÓRDÃO ADI 6606';
+    document.getElementById('ch-title').textContent = ch.title;
+    document.getElementById('ch-core-idea').textContent = ch.core_idea;
+
+    // Frameworks
+    var fwCont = document.getElementById('ch-frameworks-container');
+    document.getElementById('ch-fw-count').textContent = ch.frameworks.length + ' Frameworks';
+    var fwHtml = '';
+    ch.frameworks.forEach(function(fw) {
+      fwHtml += '<div class="framework-card fw-item">' +
+        '<div class="framework-title">' + esc(fw.name) + '</div>' +
+        '<div class="framework-desc">' + esc(fw.desc) + '</div>' +
+        '<div class="fw-meta-grid">';
+
+      if (fw.when_to_use) {
+        fwHtml += '<div class="fw-meta-row"><span class="fw-meta-tag">When to use</span><span class="fw-meta-val">' + esc(fw.when_to_use) + '</span></div>';
+      }
+      if (fw.how) {
+        fwHtml += '<div class="fw-meta-row"><span class="fw-meta-tag">How</span><span class="fw-meta-val">' + esc(fw.how) + '</span></div>';
+      }
+      if (fw.why) {
+        fwHtml += '<div class="fw-meta-row"><span class="fw-meta-tag">Why it works / Modo de falha</span><span class="fw-meta-val">' + esc(fw.why) + '</span></div>';
+      }
+      if (fw.extra_keys && fw.extra_keys.length > 0) {
+        fw.extra_keys.forEach(function(k) {
+          fwHtml += '<div class="fw-meta-row"><span class="fw-meta-tag">' + esc(k.key) + '</span><span class="fw-meta-val">' + esc(k.val) + '</span></div>';
+        });
+      }
+      if (fw.sub_items && fw.sub_items.length > 0) {
+        fwHtml += '<div class="fw-meta-row" style="margin-top: 6px;"><span class="fw-meta-tag">Itens / Desdobramentos:</span><ul style="padding-left: 18px; margin-top: 4px;">';
+        fw.sub_items.forEach(function(sub) {
+          fwHtml += '<li style="margin-bottom: 3px;">' + esc(sub) + '</li>';
+        });
+        fwHtml += '</ul></div>';
+      }
+      fwHtml += '</div></div>';
+    });
+    fwCont.innerHTML = fwHtml;
+
+    // Concepts
+    var concCont = document.getElementById('ch-concepts-container');
+    var concHtml = '';
+    ch.concepts.forEach(function(c) {
+      concHtml += '<div class="concept-card">' +
+        '<div class="concept-term">' + esc(c.term) + '</div>' +
+        '<div class="concept-desc">' + esc(c.desc) + '</div>' +
+      '</div>';
+    });
+    concCont.innerHTML = concHtml;
+
+    // Mental Models
+    var mmCont = document.getElementById('ch-mental-models-container');
+    var mmHtml = '';
+    ch.mental_models.forEach(function(mm) {
+      mmHtml += '<div style="background: var(--papel); padding: 12px 14px; border-radius: var(--radius-sm); border-left: 3px solid var(--navy);">' +
+        '<div style="font-weight: 700; color: var(--navy); font-size: 0.90rem; margin-bottom: 4px;">' + esc(mm.name) + '</div>' +
+        '<div style="font-size: 0.84rem; color: var(--tinta);">' + esc(mm.desc) + '</div>' +
+      '</div>';
+    });
+    mmCont.innerHTML = mmHtml;
+
+    // Anti-patterns
+    var apCont = document.getElementById('ch-antipatterns-container');
+    var apHtml = '';
+    ch.anti_patterns.forEach(function(ap) {
+      apHtml += '<div class="antipattern-card">' +
+        '<div class="antipattern-name">🚫 ' + esc(ap.name) + '</div>' +
+        '<div class="antipattern-wrong">' + esc(ap.wrong) + '</div>' +
+        '<div class="antipattern-reason">Por que falha: ' + esc(ap.reason) + '</div>' +
+      '</div>';
+    });
+    apCont.innerHTML = apHtml;
+
+    // Worked Example
+    var exCont = document.getElementById('ch-worked-example');
+    exCont.innerHTML = '<pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.88rem; line-height: 1.6;">' + esc(ch.worked_example) + '</pre>';
+
+    // Key Takeaways
+    var takeCont = document.getElementById('ch-takeaways-container');
+    var takeHtml = '';
+    ch.takeaways.forEach(function(t) {
+      takeHtml += '<li style="display: flex; gap: 10px; align-items: flex-start; padding: 6px 0; border-bottom: 1px dashed var(--border-papel);">' +
+        '<span style="color: var(--success-green); font-weight: 700;">✓</span>' +
+        '<span style="font-size: 0.90rem; color: var(--tinta);">' + esc(t) + '</span>' +
+      '</li>';
+    });
+    takeCont.innerHTML = takeHtml;
+
+    // Pagination controls
+    document.getElementById('ch-pagination-label').textContent = 'Capítulo ' + (idx + 1) + ' de ' + CHAPTERS_DATA.length;
+    document.getElementById('btn-prev-chapter').disabled = (idx === 0);
+    document.getElementById('btn-next-chapter').disabled = (idx === CHAPTERS_DATA.length - 1);
+  }
+
+  /* 3. GLOSSARY RENDERING */
+  function initGlossary(data) {
+    var cont = document.getElementById('glossary-container');
+    if (!cont) return;
+
+    var countBadge = document.getElementById('gloss-count-badge');
+    var sideCount = document.getElementById('sidebar-gloss-count');
+    if (countBadge) countBadge.textContent = data.length + ' Termos';
+    if (sideCount) sideCount.textContent = data.length;
+
+    var html = '';
+    data.forEach(function(item) {
+      html += '<div class="glossary-card gloss-item">' +
+        '<div>' +
+          '<div class="glossary-term">' + esc(item.term) + '</div>' +
+          '<div class="glossary-def" style="margin-top: 6px;">' + esc(item.definition) + '</div>' +
+        '</div>';
+      if (item.chapter_ref) {
+        html += '<div class="glossary-ch-tag">' + esc(item.chapter_ref) + '</div>';
+      }
+      html += '</div>';
+    });
+    cont.innerHTML = html;
+  }
+
+  window.handleGlossarySearch = function(query) {
+    if (!query) {
+      initGlossary(GLOSSARY_DATA);
+      return;
+    }
+    var q = query.toLowerCase().trim();
+    var filtered = GLOSSARY_DATA.filter(function(item) {
+      return item.term.toLowerCase().includes(q) || item.definition.toLowerCase().includes(q) || (item.chapter_ref && item.chapter_ref.toLowerCase().includes(q));
+    });
+    initGlossary(filtered);
+  };
+
+  /* 4. CHEATSHEET RENDERING */
+  function initCheatsheet() {
+    // Rules
+    var rulesBody = document.getElementById('cheatsheet-rules-table');
+    if (rulesBody) {
+      var rHtml = '';
+      CHEATSHEET_DATA.rules.forEach(function(r) {
+        rHtml += '<tr>' +
+          '<td><strong>' + esc(r.scenario) + '</strong></td>' +
+          '<td>' + esc(r.rule) + '</td>' +
+          '<td class="font-mono" style="color: var(--latao-dark); font-weight: 600;">' + esc(r.basis) + '</td>' +
+        '</tr>';
+      });
+      rulesBody.innerHTML = rHtml;
+    }
+
+    // Matrix
+    var allowList = document.getElementById('matrix-allowed-list');
+    if (allowList) {
+      var aHtml = '';
+      CHEATSHEET_DATA.verbas_permitidas.forEach(function(v) {
+        aHtml += '<li>' + esc(v) + '</li>';
+      });
+      allowList.innerHTML = aHtml;
+    }
+
+    var forbidList = document.getElementById('matrix-forbidden-list');
+    if (forbidList) {
+      var fHtml = '';
+      CHEATSHEET_DATA.verbas_proibidas.forEach(function(v) {
+        fHtml += '<li>' + esc(v) + '</li>';
+      });
+      forbidList.innerHTML = fHtml;
+    }
+
+    // Thresholds
+    var threshGrid = document.getElementById('cheatsheet-thresholds-grid');
+    if (threshGrid) {
+      var tHtml = '';
+      CHEATSHEET_DATA.thresholds.forEach(function(th) {
+        tHtml += '<div class="threshold-card">' +
+          '<div class="threshold-val">' + esc(th.value) + '</div>' +
+          '<div class="threshold-lbl">' + esc(th.label) + '</div>' +
+          '<div class="threshold-desc">' + esc(th.desc) + '</div>' +
+        '</div>';
+      });
+      threshGrid.innerHTML = tHtml;
+    }
+
+    // Smells
+    var smellsCont = document.getElementById('cheatsheet-smells-container');
+    if (smellsCont) {
+      var sHtml = '';
+      CHEATSHEET_DATA.smells.forEach(function(s) {
+        sHtml += '<div class="smell-card">' +
+          '<div class="smell-title">🚩 Sinal ' + s.num + ': ' + esc(s.title) + '</div>' +
+          '<div class="smell-desc">' + esc(s.desc) + '</div>' +
+          '<div class="smell-violation">' + esc(s.violation) + '</div>' +
+        '</div>';
+      });
+      smellsCont.innerHTML = sHtml;
+    }
+  }
+
+  /* 5. PATTERNS RENDERING */
+  function initPatterns() {
+    var cont = document.getElementById('patterns-container');
+    if (!cont) return;
+
+    var html = '';
+    PATTERNS_DATA.forEach(function(p) {
+      html += '<div class="pattern-card pattern">' +
+        '<div class="pattern-title">📐 ' + esc(p.title) + '</div>' +
+        '<div class="pattern-section-block">' +
+          '<div class="pattern-label">When to use</div>' +
+          '<div class="pattern-text">' + esc(p.when_to_use) + '</div>' +
+        '</div>' +
+        '<div class="pattern-section-block">' +
+          '<div class="pattern-label">How (Protocolo de Aplicação)</div>';
+
+      if (p.how.includes('def ') || p.how.includes('return {')) {
+        html += '<pre class="code-block"><code>' + esc(p.how) + '</code></pre>';
+      } else {
+        html += '<pre style="white-space: pre-wrap; font-family: inherit; font-size: 0.90rem; line-height: 1.55; color: var(--tinta);">' + esc(p.how) + '</pre>';
+      }
+
+      html += '</div>' +
+        '<div class="pattern-section-block">' +
+          '<div class="pattern-label">Trade-offs & Impacto Prático</div>' +
+          '<div class="pattern-text" style="color: var(--navy); font-weight: 500;">' + esc(p.trade_offs) + '</div>' +
+        '</div>' +
+      '</div>';
+    });
+    cont.innerHTML = html;
+  }
+
+  /* 6. KEYBOARD NAVIGATION WITH FOCUS GUARD */
+  function setupKeyboardNav() {
+    document.addEventListener('keydown', function(e) {
+      var tag = document.activeElement ? document.activeElement.tagName : '';
+      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(tag) || (document.activeElement && document.activeElement.isContentEditable)) {
+        return;
+      }
+
+      if (e.key === 'ArrowLeft') {
+        if (currentTab !== 'chapters') {
+          window.go('chapters');
+        } else {
+          window.navPrev();
+        }
+      } else if (e.key === 'ArrowRight') {
+        if (currentTab !== 'chapters') {
+          window.go('chapters');
+        } else {
+          window.navNext();
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>
